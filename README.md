@@ -1,13 +1,16 @@
-# Landing Page Listrace
+# Landing Page: Listrace
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.  
+Run `ng serve` for a dev server. For default to `http://localhost:4200/`.  
 
 Se ha desarrollado una prueba técnica para una posición Senior de Front-End, el pdf indica usar next 
 js/react js/angular, en este caso se ha utilizado unicamente Angular y Tailwindcss.  
 
 ## Stack de tecnologías
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+✅ Angular CLI version 17.3.8  
+✅ Node JS version 20.8.0  
+✅ TypeScript version 5.4.2    
+✅ Tailwindcss 3.4.6     
 
 ## Build
 
