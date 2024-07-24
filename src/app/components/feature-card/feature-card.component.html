@@ -1,21 +1,20 @@
 <main>
-    <section class="how-it-works my-8 text-center text-[24px] container mx-auto pt-[100px]">
-        <h2 class="uppercase mb-6 tracking-wide">How it works</h2>
-        <p class="paragraph">Learn More about how our website works</p>
+    <section class="how-it-works">
+        <h2 class="section-heading">How it works</h2>
+        <p class="section-paragraph">Learn More about how our website works</p>
        
-        <div class="pt-[80px] feature-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="feature-container"> <!-- container mx-auto -->
             <div *ngFor="let card of featureCards">
-                <div class="feature-card text-center items-center flex flex-col gap-4 py-[50px] px-[42px] shadow-[0_0_5px_rgba(71,71,71,.2)]">
-                    <div class="bg-[#eef2f6] rounded-full w-fit py-2 px-3">
+                <div class="feature-card">
+                    <div class="icon-container">
                         <i [ngClass]="card.icon"></i>
                     </div>
-                    <h3 class="heading-3">
-                        <p class="paragraph">{{ card.label }}</p>
+                    <h3 class="card-heading">
+                        <p>{{ card.label }}</p>
                     </h3>
-                    <p class="paragraph">{{ card.texto }}</p>
-                    <a class="btn text-paragraph text-[12px] boder-[1px] border-[1px] border-[#d3d6d9] border-solid p-2 w-fit"
-                        [href]="card.href || '#'">{{ card.href ? 'Read More' : 'Read More' }}
-                    </a>
+                    <p class="card-paragraph">{{ card.texto }}</p>
+                    <a class="card-button" [href]="card.href || '#'">{{ card.href ? 'Read More' : 'Read More' }}</a>
                 </div>
             </div>
         </div>        

@@ -1,0 +1,90 @@
+.how-it-works {
+    margin-top: 2rem; /* my-8 */
+    margin-bottom: 2rem; /* my-8 */
+    text-align: center; /* text-center */
+    font-size: 24px; /* text-[24px] */
+    padding-top: 100px; /* pt-[100px] */
+}
+
+.section-heading {
+    text-transform: uppercase; /* uppercase */
+    margin-bottom: 1.5rem; /* mb-6 */
+    letter-spacing: 0.05em; /* tracking-wide */
+}
+
+.section-paragraph {
+    font-size: 1rem; /* Ajusta esto si tienes un tamaño específico */
+}
+
+/* CSS for Mobile */
+.feature-container {
+    padding-top: 80px; /* pt-[80px] */
+    display: grid; /* grid */
+    grid-template-columns: repeat(1, 1fr); /* grid-cols-1 */
+    gap: 1.5rem; /* gap-6 */
+    justify-items: center;
+    max-width: 1200px; /* Ajusta según sea necesario */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto; /* mx-auto */
+    margin-bottom: auto; /* mb-6 */
+    padding-left: 2rem; /* Ajusta según sea necesario */
+    padding-right: 2rem; /* Ajusta según sea necesario */
+}
+
+@media (min-width: 768px) {
+    .feature-container {
+        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+    }
+}
+
+@media (min-width: 1024px) {
+    .feature-container {
+        grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+    }
+}
+
+.feature-card {
+    text-align: center; /* text-center */
+    display: flex; /* flex */
+    flex-direction: column; /* flex-col */
+    align-items: center; /* items-center */
+    gap: 1rem; /* gap-4 */
+    padding: 50px 42px; /* py-[50px] px-[42px] */
+    /* margin-top: 0.5rem; Ajusta según sea necesario */
+    box-shadow: 0 0 5px rgba(71, 71, 71, 0.2); /* shadow-[0_0_5px_rgba(71,71,71,.2)] */
+    width: 100%;
+    max-width: 360px; /* Ajusta según sea necesario */
+}
+
+.icon-container {
+    background-color: #eef2f6; /* bg-[#eef2f6] */
+    border-radius: 9999px; /* rounded-full */
+    padding: 0.5rem 0.75rem; /* py-2 px-3 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem; /* Ajusta el ancho según sea necesario */
+    height: 5rem; /* Ajusta la altura según sea necesario */
+}
+
+.card-heading {
+    font-size: 1.25rem; /* heading-3 */
+    font-weight: bold; /* Ajusta según tu diseño */
+
+}
+
+.card-paragraph {
+    font-size: 1rem; /* paragraph */
+    margin: 0.5rem 0; /* Ajusta según sea necesario */
+    /*text-align: center;  Justifica el texto */
+}
+
+.card-button {
+    color: #333; /* text-paragraph (ajusta según tu diseño) */
+    font-size: 12px; /* text-[12px] */
+    border: 1px solid #d3d6d9; /* border-[1px] border-[#d3d6d9] */
+    padding: 0.5rem; /* p-2 */
+    width: fit-content; /* w-fit */
+    text-decoration: none; /* Ajusta según sea necesario */
+    margin-top: -0.5rem; /*Ajusta según sea necesario */
+}
