@@ -1,0 +1,33 @@
+/* category-card.component.css */
+
+/* Estilo general para la tarjeta de categoría */
+.category-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* 2 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    width: 205px;
+    padding-top: 2.5rem; /* py-10 */
+    padding-bottom: 2.5rem; /* py-10 */
+    text-align: center;
+    margin-bottom: 1rem;
+    /* border: 1px solid; */
+  }
+  
+  /* Estilo para el ícono de la tarjeta */
+  .single-lit-topics-icon i {
+    font-size: 2rem; /* Ajusta según tu necesidad */
+  }
+  
+  /* Estilo para el encabezado */
+  .heading-2 {
+    font-size: 1.2rem; /* Ajusta según tu necesidad */
+    font-weight: 500; /* Ajusta según tu necesidad */
+  }
+  
+  /* Estilo para el párrafo */
+  .paragraph {
+    font-size: 1rem; /* Ajusta según tu necesidad */
+    color: #6b7280; /* Ajusta según tu necesidad */
+  }
+  

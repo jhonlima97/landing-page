@@ -1,0 +1,17 @@
+<!-- category-card.component.html -->
+<main class="pb-20rem">
+    <section>
+      <div *ngFor="let card of categoryCards">
+        <div class="category-card">
+          <div class="single-lit-topics-icon">
+            <i [ngClass]="card.icon"></i>
+          </div>
+          <h2 class="heading-2">
+            {{ card.name }}
+          </h2>
+          <p class="paragraph">{{ card.counts | number }} listings</p>
+        </div>
+      </div>
+    </section>
+</main>
+  

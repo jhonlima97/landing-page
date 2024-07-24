@@ -1,14 +1,13 @@
-# Listrace
+# Landing Page Listrace
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+
+Se desarrollado una prueba tecnica para una posición Senior de Front-End, el pdf indica usar next 
+js/react js/angular, en este caso se ha utilizado unicamente Angular y Tailwindcss.  
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
