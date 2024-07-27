@@ -1,6 +1,8 @@
 <!-- category-card.component.html -->
 <main class="pb-20rem">
-    <section>
+  <section>
+
+    <div class="category-container">
       <div *ngFor="let card of categoryCards">
         <div class="category-card">
           <div class="single-lit-topics-icon">
@@ -12,6 +14,7 @@
           <p class="paragraph">{{ card.counts | number }} listings</p>
         </div>
       </div>
-    </section>
+    </div>
+    
+  </section>
 </main>
-  

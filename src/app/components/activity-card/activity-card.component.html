@@ -1,1 +1,42 @@
-<p>activity-card works!</p>
+<main>
+    <section class="bg-[#f8fafb]">
+        <div class="activity-container mx-auto px-8 sm:px-12 lg:px-24 shadow-activity-card border-[#edeff1] border-[1px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div *ngFor="let card of activityCards" class="border border-[#edeff1] rounded overflow-hidden shadow-activity-card">
+                <div class="image relative h-[250.3px] contrast-[.6] overflow-hidden">
+                    <img [src]="card.image" alt="{{card.name}}" class="w-full h-full object-cover">
+                </div>
+                <div class="content py-[25px] px-[15px]"> 
+                    <h3 class="text-[20px]"> 
+                        <a href="/">{{card.name}}</a> 
+                    </h3>
+                    <p class="text-paragraph text-[12px] flex flex-row gap-2 items-center mt-[10px]">
+                        <span class="bg-skyblue text-white px-2 py-1 rounded-[3px]">
+                            {{card.rating}}
+                        </span>
+                        <a href="#">{{card.ratingCount}} ratings</a>
+                        <span>from
+                            <span class="text-primary-600"> {{card.minValue}}$-{{card.maxValue}}$</span>
+                        </span>
+                        <a href="#" class="capitalize">{{card.category}}</a>
+                    </p>
+                    
+                    <div class="host flex items-center mt-[20px]">
+                        <img [src]="card.hostImage" alt="{{card.name}}" class="w-[40px] h-[40px] rounded-full mr-[10px]">
+                        <p class="text-paragraph text-[12px]">
+                            {{card.hostDescription}}
+                        </p>
+                    </div>
+
+                    <hr class="border-[#e1e5eb] mt-[20px] mb-[15px]">
+                    
+                    <div class="extra-information flex justify-between items-center">
+                        <p [ngClass]="{'text-green': card.status, 'text-primary-600': !card.status}" class="text-[12px]">
+                            {{card.status ? 'Open Now' : 'Closed Now'}}
+                        </p>
+                        <p>Iconos</p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </section>
+</main>
