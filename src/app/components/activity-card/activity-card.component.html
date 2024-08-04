@@ -1,6 +1,6 @@
 <main>
     <section class="bg-[#f8fafb]">
-        <div class="activity-container mx-auto px-8 sm:px-12 lg:px-24 shadow-activity-card border-[#edeff1] border-[1px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="activity-container mx-auto px-8 sm:px-12 lg:px-24 border-[#edeff1] border-[1px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div *ngFor="let card of activityCards" class="border border-[#edeff1] rounded overflow-hidden shadow-activity-card">
                 <div class="image relative h-[250.3px] contrast-[.6] overflow-hidden">
                     <img [src]="card.image" alt="{{card.name}}" class="w-full h-full object-cover">
@@ -13,9 +13,9 @@
                         <span class="bg-skyblue text-white px-2 py-1 rounded-[3px]">
                             {{card.rating}}
                         </span>
-                        <a href="#">{{card.ratingCount}} ratings</a>
-                        <span>from
-                            <span class="text-primary-600"> {{card.minValue}}$-{{card.maxValue}}$</span>
+                        <a href="#">{{card.ratingCount}} Ratings |</a>
+                        <span>Form
+                            <span class="text-primary-600"> {{card.minValue}}$-{{card.maxValue}}$</span> |
                         </span>
                         <a href="#" class="capitalize">{{card.category}}</a>
                     </p>

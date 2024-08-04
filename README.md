@@ -2,6 +2,8 @@
 
 Run `ng serve` for a dev server. For default to `http://localhost:4200/`.  
 
+Para probar la API: ejecutar node src/server.js ----->  http://localhost:3000/api/explore  
+
 Se ha desarrollado una prueba técnica para una posición Senior de Front-End, el pdf indica usar next 
 js/react js/angular, en este caso se ha utilizado unicamente Angular y Tailwindcss.  
 
