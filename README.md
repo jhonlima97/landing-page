@@ -3,7 +3,7 @@
 Run `ng serve` for a dev server. For default to `http://localhost:4200/`.  
 
 Para probar la API: ejecutar node server.js  
-endpoints:
+endpoints:  
     explore  
     reviews  
     posts  
