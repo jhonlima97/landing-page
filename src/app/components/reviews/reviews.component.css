@@ -79,7 +79,7 @@
 }
 
 .slick-slide {
-  opacity: 0.5; /* menos aumneta la opacidad */
+  opacity: 0.4; /* menos aumneta la opacidad */
   transition: opacity 0.3s;
 }
 

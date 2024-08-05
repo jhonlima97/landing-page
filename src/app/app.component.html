@@ -1,24 +1,65 @@
 <!-- section navbar -->
-<section class="bg-[#859098]">
+<section>
   <div class="extra-information flex justify-between items-center">
     <h2 class="uppercase mb-6 tracking-wide text-[20px]">Selects</h2>
     <p class="text-[18px]">Opciones Navbar...</p>
   </div>
   <hr class="border-[#e1e5eb] mt-[20px] mb-[15px]">
-  <div class="extra-information flex justify-between items-center">
-    <h2 class="uppercase mb-6 tracking-wide text-[20px]">ListRace</h2>
-    <p class="text-[18px]">Menus Navbar...</p>
+
+  <nav class="py-[30px]">
+    <div class="container mx-auto flex justify-between">
+      <div class="logo">
+        <a class="text-[#1b1e20] font-bold text-[20px]" href="/">List
+          <span class="text-primary-500">Race</span>
+        </a>
+      </div>
+      <div class="menu">
+        <ul class="flex gap-10">
+          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+            href="">Home</a></li>
+          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500" 
+            href="">How it works</a></li>
+          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+            href="">Explore</a></li>
+          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+            href="">Reviews</a></li>
+          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+            href="">Blog</a></li>
+          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+            href="">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    
+</nav>
+</section>
+
+<!-- Section hero -->
+<section class="hero h-[800px] bg-[url('/assets/images/hero/banner.jpg')] relative text-center pt-[80px] md:pt-[155px]">
+  <div class="absolute inset-0 bg-black opacity-50"></div>
+  <div class="container mx-auto px-6 relative max-w-6xl">
+    <h1 class="text-[24px] text-white uppercase font-bold tracking-[2.4px] text-pretty md:text-[40px] md:px-16">
+      best place to find and explore that all you need
+    </h1>
+    <p class="text-white txt-[18px] mt-[25px]">
+      Find Best Place, Restaurant, Hotel, Real State and many more think in just One click
+    </p>
+  </div>
+</section>
+ 
+<app-category-card></app-category-card>
+
+ <!-- section How it works -->
+ <section class="pt-[40px] pb-[40px]">
+  <div class="container mx-auto px-6 text-center max-w-6xl">
+    <h2 class="uppercase mb-6 tracking-wide text-[24px]">How it works</h2>
+    <p class="text-[18px]">Learn More about how our website works</p>
   </div>
 </section>
 
-<!-- section How it works -->
-
-
-<app-category-card></app-category-card>
 <app-feature-card></app-feature-card>
 
 <!-- section explore -->
-
 <section class="bg-[#f8fafb] pt-[117px] pb-[95px]">
     <div class="container mx-auto px-6 text-center max-w-6xl">
       <h2 class="uppercase mb-6 tracking-wide text-[24px]">Explore</h2>
@@ -28,7 +69,8 @@
 
 <app-activity-card></app-activity-card>
 
-<section class="bg-[#f8fafb] pt-[117px] pb-[95px]">
+<!-- section reviews -->
+<section class="bg-[#f8fafb] pt-[80px] pb-[50px]">
   <div class="container mx-auto px-6 text-center max-w-6xl">
     <h2 class="uppercase mb-6 tracking-wide text-[24px]">Cientes reviews</h2>
     <p class="text-[18px]">What our client say about us</p>
