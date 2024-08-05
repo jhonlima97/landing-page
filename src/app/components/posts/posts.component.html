@@ -1,1 +1,26 @@
-<p>posts works!</p>
+<main>
+    <section class="bg-[#f8fafb]">
+        <div class="posts-container mx-auto px-8 sm:px-12 lg:px-24 border-[#edeff1] border-[1px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div *ngFor="let card of postsCards" class="border border-[#edeff1] rounded overflow-hidden shadow-activity-card">
+                <div class="image relative h-[250.3px] contrast-[.6] overflow-hidden">
+                    <img [src]="card.image" alt="{{card.name}}" class="w-full h-full object-cover">
+                </div>
+                <div class="content py-[25px] px-[15px]"> 
+                    <h3 class="text-[20px]"> 
+                        <a href="/">{{card.name}}</a> 
+                    </h3>
+                    <p class="text-paragraph text-[12px] flex flex-row gap-2 items-center mt-[10px]">
+                        <a href="#">Posted By {{card.author}}</a>
+                        <span> {{card.publishMonth}} {{card.publishYear}}</span>
+                    </p>
+                    
+                    <div class="host flex items-center mt-[20px]">
+                        <p class="text-paragraph text-[12px]">
+                            {{card.summary}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </section>
+</main>

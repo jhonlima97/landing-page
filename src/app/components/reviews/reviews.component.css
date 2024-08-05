@@ -1,0 +1,114 @@
+.reviews-section {
+  padding: 20px 20px;
+  background-color: #f9f9f9;
+  
+}
+
+.carousel {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid; */
+
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transition: opacity 0.3s;
+}
+
+.review-card {
+  width: 395px; /* Ajusta el ancho según tus necesidades */
+  height: 275.75px; /* Ajusta el alto según tus necesidades */
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0 0px 5px 5px rgba(71,71,71,.2);
+  color: #a09e9c;
+  background: #ffffff;
+  overflow-x: hidden;
+  text-align: left;
+}
+
+.testimonial-info {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.testimonial-img {
+  position: relative;
+  margin-right: 10px;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+.testimonial-person h2 {
+  font-size: 18px;
+  color: #505866;
+  font-weight: bold;
+}
+
+.testimonial-person h4 {
+  font-size: 14px;
+  color: #a2a5ab;
+  font-weight: 400;
+}
+
+.testimonial-person-star {
+  color: #ffda2b;
+  margin: 9px 4px 0 0;
+}
+
+.review-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-testimonial {
+  color: #8d939e;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.slick-slide {
+  opacity: 0.5; /* menos aumneta la opacidad */
+  transition: opacity 0.3s;
+}
+
+.slick-center {
+  opacity: 1 !important; /* Opacidad completa para el slide central */
+}
+
+/* Responsive */
+@media (min-width: 480px) {
+  .carousel {
+    width: 100%; /* Ancho para dispositivos móviles pequeños */
+  }
+}
+
+@media (min-width: 640px) {
+  .carousel {
+    width: 80%; /* Ancho para tablets y dispositivos medianos */
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel {
+    width: 100%; /* Ancho para tablets y dispositivos medianos */
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel {
+    width: 100%; /* Ancho para pantallas grandes */
+  }
+}
+

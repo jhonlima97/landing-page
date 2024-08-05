@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ExploreService } from '../../api/explore/explore.service';
+import { ExploreService } from '../../api/explore.service';
 import { HttpClientModule } from '@angular/common/http';
 
 interface ActivityCard {
@@ -25,6 +25,7 @@ interface ActivityCard {
   styleUrls: ['./activity-card.component.css'],
   providers: [ExploreService]
 })
+
 export class ActivityCardComponent implements OnInit {
   @Input() cardData: ActivityCard = { 
     id: 0, 

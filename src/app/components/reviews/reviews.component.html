@@ -1,1 +1,30 @@
-<p>reviews works!</p>
+<main>
+  <section class="reviews-section">
+    <div class="review-slider">
+      <ngx-slick-carousel class="carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let review of reviews" class="slide">
+          
+          <div class="review-card">
+            <div class="testimonial-info">
+              <div class="testimonial-img">
+                <img [src]="review.image" alt="{{review.client}}" class="review-image" />
+              </div>
+              <div class="testimonial-person">
+                <h2>{{review.client}}</h2>
+                <h4>{{review.location}}</h4>
+                <div class="testimonial-person-star">
+                  <i class="fi fi-ss-star"></i>
+                  <i class="fi fi-ss-star"></i>
+                  <i class="fi fi-ss-star"></i>
+                  <i class="fi fi-ss-star"></i>
+                  <i class="fi fi-ss-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="review-testimonial">{{review.testimonial}}</p>
+          </div>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+  </section>
+</main>
