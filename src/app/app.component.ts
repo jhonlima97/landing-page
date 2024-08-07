@@ -5,12 +5,13 @@ import { FeatureCardComponent } from './components/feature-card/feature-card.com
 import { ActivityCardComponent } from './components/activity-card/activity-card.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { PostsComponent } from "./components/posts/posts.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
+    RouterOutlet, CommonModule,
     CategoryCardComponent,
     FeatureCardComponent,
     ActivityCardComponent,
@@ -21,5 +22,10 @@ import { PostsComponent } from "./components/posts/posts.component";
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'LisTrace';
+
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

@@ -1,10 +1,10 @@
-<!-- category-card.component.html -->
-<main class="pb-20rem">
-  <section>
-
-    <div class="category-container">
+<!-- category-card.component.html 225x190-->
+<main>
+  <section class="category container mx-auto max-w-6xl my-[50px] pt-[80px] relative">
+    <div class="category-container grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 
+                gap-1 justify-items-center md:absolute md:w-full md:-top-[150px]">
       <div *ngFor="let card of categoryCards">
-        <div class="category-card">
+        <div class="category-card group duration-300">
           <div class="single-lit-topics-icon">
             <i [ngClass]="card.icon"></i>
           </div>

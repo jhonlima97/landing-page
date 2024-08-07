@@ -1,6 +1,6 @@
 <main>
     <section class="bg-[#f8fafb]">
-        <div class="posts-container mx-auto px-8 sm:px-12 lg:px-24 border-[#edeff1] border-[1px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 duration-300">
+        <div class="posts-container mx-auto px-8 sm:px-12 lg:px-24 border-[#edeff1] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 duration-300">
             <div *ngFor="let card of postsCards" class="border border-[#edeff1] rounded overflow-hidden shadow-activity-card">
                 <div class="image relative h-[250.3px] contrast-[.6] overflow-hidden">
                     <img [src]="card.image" alt="{{card.name}}" class="w-full h-full object-cover">

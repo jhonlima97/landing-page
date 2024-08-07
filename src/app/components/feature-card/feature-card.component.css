@@ -38,12 +38,23 @@
     flex-direction: column; /* flex-col */
     align-items: center; /* items-center */
     gap: 1rem; /* gap-4 */
-    padding: 50px 42px; /* py-[50px] px-[42px] */
-    /* margin-top: 0.5rem; Ajusta según sea necesario */
+    padding: 50px 42px;
     box-shadow: 0 0 5px rgba(71, 71, 71, 0.2); /* shadow-[0_0_5px_rgba(71,71,71,.2)] */
     width: 100%;
-    max-width: 360px; /* Ajusta según sea necesario */
+    max-width: 360px;
+    transition: background-color 0.3s ease;
 }
+
+.feature-card:hover {
+    background-color: #ff545a; /* primary-500 */
+  }
+  
+  .feature-card:hover .card-heading,
+  .feature-card:hover .card-paragraph,
+  .feature-card:hover .card-button {
+    color: white;
+  }
+  
 
 .icon-container {
     background-color: #eef2f6; /* bg-[#eef2f6] */
@@ -59,7 +70,6 @@
 .card-heading {
     font-size: 1.25rem; /* heading-3 */
     font-weight: bold; /* Ajusta según tu diseño */
-
 }
 
 .card-paragraph {

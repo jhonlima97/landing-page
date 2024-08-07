@@ -1,7 +1,6 @@
 .reviews-section {
   padding: 20px 20px;
   background-color: #f9f9f9;
-  
 }
 
 .carousel {
@@ -10,7 +9,6 @@
   width: 100%;
   box-sizing: border-box;
   /* border: 1px solid; */
-
 }
 
 .slide {
@@ -22,8 +20,8 @@
 }
 
 .review-card {
-  width: 395px; /* Ajusta el ancho según tus necesidades */
-  height: 275.75px; /* Ajusta el alto según tus necesidades */
+  width: 395px;
+  height: 275.75px;
   box-sizing: border-box;
   padding: 20px;
   border: 1px solid #ddd;

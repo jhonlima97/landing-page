@@ -1,20 +1,22 @@
 <!-- section navbar -->
 <section>
   <div class="extra-information flex justify-between items-center">
-    <h2 class="uppercase mb-6 tracking-wide text-[20px]">Selects</h2>
+    <h2 class="uppercase mb-3 tracking-wide text-[20px]">Selects</h2>
     <p class="text-[18px]">Opciones Navbar...</p>
   </div>
-  <hr class="border-[#e1e5eb] mt-[20px] mb-[15px]">
+  <hr class="border-[#e1e5eb]">
 
-  <nav class="py-[30px]">
-    <div class="container mx-auto flex justify-between">
-      <div class="logo">
-        <a class="text-[#1b1e20] font-bold text-[20px]" href="/">List
-          <span class="text-primary-500">Race</span>
-        </a>
+  <nav class="py-[10px]">
+    <div class="container mx-auto flex flex-wrap justify-start gap-2 items-center lg:justify-between p-2 max-w-6xl">
+      <div class="w-full flex justify-between items-center lg:w-auto">
+        <button type="button" class="burguer relative border-primary-500 border-[1px] p-1 rounded-md lg:hidden" (click)="toggleMenu()">
+          <img [src]="isMenuOpen ? '/assets/images/close.svg' : '/assets/images/menu.svg'" alt="Menu" width="24px" height="24px">
+        </button>
+        <a class="text-[#1b1e20] font-bold text-[20px] inline-block mx-auto lg:mx-0" href="/">List<span class="text-primary-500">Race</span></a>
       </div>
-      <div class="menu">
-        <ul class="flex gap-10">
+      <!-- menu de opciones -->
+      <div [ngClass]="{'w-full': isMenuOpen, 'hidden': !isMenuOpen, 'lg:flex': true}">
+        <ul class="flex flex-col gap-6 py-4 md:gap-10 md:flex-row">
           <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
             href="">Home</a></li>
           <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500" 
@@ -22,41 +24,36 @@
           <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
             href="">Explore</a></li>
           <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-            href="">Reviews</a></li>
+            href="">Review</a></li>
           <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
             href="">Blog</a></li>
           <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
             href="">Contact</a></li>
         </ul>
       </div>
-    </div>
-    
-</nav>
+    </div> 
+  </nav>
 </section>
 
 <!-- Section hero -->
-<section class="hero h-[800px] bg-[url('/assets/images/hero/banner.jpg')] relative text-center pt-[80px] md:pt-[155px]">
+<section class="hero h-[800px] bg-[url('/assets/images/hero/banner.jpg')] relative text-center contrast-100 pt-[80px] md:pt-[155px]">
   <div class="absolute inset-0 bg-black opacity-50"></div>
-  <div class="container mx-auto px-6 relative max-w-6xl">
-    <h1 class="text-[24px] text-white uppercase font-bold tracking-[2.4px] text-pretty md:text-[40px] md:px-16">
-      best place to find and explore that all you need
-    </h1>
-    <p class="text-white txt-[18px] mt-[25px]">
+  <div class="container mx-auto px-6 max-w-6xl relative">
+    <h2 class="text-[24px] text-white uppercase font-bold tracking-[2.4px] text-pretty md:text-[40px] md:px-12 lg:text-[48px]">
+      best place to find and explore that all you need 
+    </h2>
+    <p class="text-white text-[18px] mt-[25px] px-10">
       Find Best Place, Restaurant, Hotel, Real State and many more think in just One click
     </p>
   </div>
 </section>
- 
 <app-category-card></app-category-card>
 
  <!-- section How it works -->
- <section class="pt-[40px] pb-[40px]">
-  <div class="container mx-auto px-6 text-center max-w-6xl">
+<section class="how-it-works my-8 text-center text-[24px] container mx-auto pt[100px] px-6 max-w-6xl pb-[90px] md:pt-[300px] lg:pt-[50px]">
     <h2 class="uppercase mb-6 tracking-wide text-[24px]">How it works</h2>
     <p class="text-[18px]">Learn More about how our website works</p>
-  </div>
 </section>
-
 <app-feature-card></app-feature-card>
 
 <!-- section explore -->
@@ -76,8 +73,13 @@
     <p class="text-[18px]">What our client say about us</p>
   </div>
 </section>
-
 <app-reviews></app-reviews>
+<br>
+
+<!-- Section 90 K+ listings -->
+ <section>
+  <h2>90 K+  listings</h2>
+ </section>
 
 <section class="bg-[#f8fafb] pt-[117px] pb-[95px]">
   <div class="container mx-auto px-6 text-center max-w-6xl">
@@ -85,20 +87,54 @@
     <p class="text-[18px]">Always upto date with our latest News and Articles</p>
   </div>
 </section>
-
 <app-posts></app-posts>
 
-<!-- section footer -->
-<section class="bg-[#859098] mt-[20px]">
-  <div class="extra-information flex justify-between items-center">
-    <h2 class="uppercase mb-6 tracking-wide text-[24px]">ListRace</h2>
-    <p class="text-[18px]">Menus footer...</p>
-  </div>
-  <hr class="border-[#e1e5eb] mt-[20px] mb-[15px]">
-  <div class="extra-information flex justify-between items-center">
-    <h2 class="uppercase mb-6 tracking-wide text-[20px]">
-      ©Copyright. Designed And Developed By Jhon lima</h2>
-    <p class="text-[18px]">Links footer...</p>
-  </div>
-</section>
 <br>
+<!-- section email -->
+<section>
+  <h2>ENTER EMAIL</h2>
+</section>
+
+<!-- section footer -->
+<section>
+  <footer class="container mx-auto max-w-6xl px-6 py-[45px] max-w-6xl">
+    <div class="flex flex-wrap items-center md:justify-between">
+      <div class="logo">
+        <a class="text-[#1b1e20] font-bold text-[20px]" href="/">List
+          <span class="text-primary-500">Race</span>
+        </a>
+      </div>
+      <ul class="flex flex-wrap w-full gap-6 pb-4 md:w-fit md:gap-6 md:flex-row">
+        <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500" 
+          href="">How it works</a></li>
+        <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+          href="">Explore</a></li>
+        <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+          href="">Review</a></li>
+        <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+          href="">Blog</a></li>
+        <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+          href="">Contact</a></li>
+        <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+          href="">my acount</a></li>
+      </ul>
+    </div>
+    <hr class="border-[#e1e5eb] mt-[20px] mb-[15px]">
+
+    <div class="extra-information flex justify-between items-center">
+      <div class="copyright">
+        <p class="mb-6 tracking-wide text-[16px] text-[#a5adb3]">
+          ©Copyright.   Designed and developed by 
+          <a href="https://github.com/jhonlima97">Jhon Lima</a>
+        </p>
+      </div>
+      <ul class="flex flex-wrap w-full gap-6 pb-4 md:w-fit md:gap-6 md:flex-row text-[#a5adb3]">
+       <a href="#"><i class="fi fi-brands-whatsapp"> +51 97641888</i></a>
+       <a href="#"><i class="fi fi-brands-facebook"></i></a>
+       <a href="#"><i class="fi fi-brands-twitter"></i></a>
+       <a href="#"><i class="fi fi-brands-google"></i></a>
+       <a href="#"><i class="fi fi-brands-linkedin"></i></a>
+      </ul>      
+    </div>
+  </footer> 
+</section>
