@@ -19,7 +19,6 @@ interface PostCard {
   standalone: true,
   imports: [CommonModule, HttpClientModule],
   templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css'],
   providers: [PostsService]
 })
 export class PostsComponent implements OnInit{

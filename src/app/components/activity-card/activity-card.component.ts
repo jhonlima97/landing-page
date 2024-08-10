@@ -22,7 +22,6 @@ interface ActivityCard {
   standalone: true,
   imports: [CommonModule, HttpClientModule],
   templateUrl: './activity-card.component.html',
-  styleUrls: ['./activity-card.component.css'],
   providers: [ExploreService]
 })
 
