@@ -49,7 +49,7 @@
 </section>
 <app-category-card></app-category-card>
 
- <!-- section How it works -->
+<!-- section How it works -->
 <section class="how-it-works my-8 text-center text-[24px] container mx-auto pt[100px] px-6 max-w-6xl pb-[90px] md:pt-[300px] lg:pt-[50px]">
     <h2 class="uppercase mb-6 tracking-wide text-[24px]">How it works</h2>
     <p class="text-[18px]">Learn More about how our website works</p>
@@ -74,10 +74,9 @@
   </div>
 </section>
 <app-reviews></app-reviews>
-<br>
 
 <!-- Section Metrics -->
- <section class="borde-black border-[1px]">
+ <section class="borde-black border-[1px] text-center">
   <h2>90 K+  listings</h2>
  </section>
 
@@ -98,7 +97,7 @@
 
       <div>
         <form class="flex flex-col items-center md:flex-row md:flex-wrap md:justify-center"
-        (submit)="handleSubmit($event)" noValidate>
+        (submit)="handleSubmit($event)">
         <input 
           [(ngModel)]="email" 
           type="email" 
@@ -112,13 +111,11 @@
             Create Account
           </button>
         </form>
-        <div *ngIf="message" 
-          [class.bg-green]="isValid"
-          [class.bg-red-500]="!isValid"
-          [class.text-white]="true"
-          [class.font-bold]="true"
-          class="p-4 mt-4">{{ message }}
+        <div *ngIf="message" [ngClass]="{
+          'bg-green': isValid, 'bg-red-500': !isValid}">
+          {{ message }}
         </div>
+        
       </div>
     </div>
   </div>

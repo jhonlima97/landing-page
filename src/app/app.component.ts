@@ -21,7 +21,10 @@ import { FormsModule } from '@angular/forms';
   ],
   templateUrl: './app.component.html'
 })
+
 export class AppComponent {
+
+  constructor(private emailService: EmailService){}
 
   // For el navbar
   isMenuOpen = false;
@@ -34,10 +37,8 @@ export class AppComponent {
   message: string = '';
   isValid: boolean = false;
 
-  constructor(private emailService: EmailService){}
-
   handleSubmit(event: Event) {
-    event.preventDefault(); // Evita la recarga de la página
+    event.preventDefault();
 
     this.message = this.emailService.validateEmail(this.email);
     this.isValid = this.message === 'Account valid';
