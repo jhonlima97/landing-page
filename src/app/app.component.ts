@@ -12,22 +12,19 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule,
-    RouterOutlet, CommonModule,
+  imports: [FormsModule, RouterOutlet, CommonModule,
     CategoryCardComponent,
     FeatureCardComponent,
     ActivityCardComponent,
     ReviewsComponent, 
     PostsComponent
   ],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
 
   // For el navbar
   isMenuOpen = false;
-
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
