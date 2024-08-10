@@ -19,6 +19,8 @@ js/react js/angular, en este caso se ha utilizado unicamente Angular y Tailwindc
 ✅ Node JS version 20.8.0  
 ✅ TypeScript version 5.4.2    
 ✅ Tailwindcss 3.4.6     
+✅ slick-carousel 1.8.1  
+
 
 ## Build
 
