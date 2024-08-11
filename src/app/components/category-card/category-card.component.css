@@ -24,22 +24,21 @@
   color: white;
 }
 
-
 /* Estilo para el ícono de la tarjeta */
 .single-lit-topics-icon i {
-  font-size: 2rem; /* Ajusta según tu necesidad */
-  margin-bottom: 0.5rem; /* Ajusta según sea necesario */
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Estilo para el encabezado */
 .heading-2 {
-  font-size: 1.2rem; /* Ajusta según tu necesidad */
-  font-weight: 500; /* Ajusta según tu necesidad */
-  margin-bottom: 0.25rem; /* Ajusta según sea necesario */
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
 }
 
 /* Estilo para el párrafo */
 .paragraph {
-  font-size: 1rem; /* Ajusta según tu necesidad */
-  color: #6b7280; /* Ajusta según tu necesidad */
+  font-size: 1rem;
+  color: #6b7280;
 }

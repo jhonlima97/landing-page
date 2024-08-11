@@ -1,11 +1,29 @@
-<!-- section navbar -->
+<!-- section navbar border-gray border-[0.5px] -->
 <section>
-  <div class="extra-information flex justify-between items-center">
-    <h2 class="uppercase mb-3 tracking-wide text-[20px]">Selects</h2>
-    <p class="text-[18px]">Opciones Navbar...</p>
+  <div class="flex flex-wrap justify-start items-center lg:justify-between md:justify-between">
+    <div class="lg:w-auto opacity-40 text-[12px] lg:mx-0 justify-between">
+      <select name="languaje" id="languaje" class="py-3 px-5">
+        <option value="EN">EN</option>
+        <option value="BN">BN</option>
+        <option value="AB">AB</option>
+      </select>
+      <select name="moneda" id="moneda" class="py-3 px-5">
+        <option value="USD">USD</option>
+        <option value="EURO">EURO</option>
+        <option value="BDT">BDT</option>
+      </select>
+      <a href="#" class="py-3 px-5"><i class="fi fi-rr-search"></i></a>
+    </div>
+    
+    <div class="lg:w-auto pt-[10px] text-[12px] opacity-40 mx-5 justify-between">
+      <ul class="flex flex-wrap w-full gap-6 pb-4 md:w-fit md:gap-6 md:flex-row">
+        <a href="#">+51 97641888</a>
+        <a href="#">Sign In</a>
+        <a href="#">Register</a>
+       </ul>     
+    </div> 
   </div>
   <hr class="border-[#e1e5eb]">
-
   <nav class="py-[10px]">
     <div class="container mx-auto flex flex-wrap justify-start gap-2 items-center lg:justify-between p-2 max-w-6xl">
       <div class="w-full flex justify-between items-center lg:w-auto">
@@ -49,8 +67,8 @@
 </section>
 <app-category-card></app-category-card>
 
-<!-- section How it works -->
-<section class="how-it-works my-8 text-center text-[24px] container mx-auto pt[100px] px-6 max-w-6xl pb-[90px] md:pt-[300px] lg:pt-[50px]">
+<!-- section How it works pb-abajo pt-arriba-->
+<section class="my-8 text-center text-[24px] container mx-auto max-w-6xl pb-[50px] pt-[50px] md:pt-[200px] lg:pt-[50px]">
     <h2 class="uppercase mb-6 tracking-wide text-[24px]">How it works</h2>
     <p class="text-[18px]">Learn More about how our website works</p>
 </section>
@@ -63,7 +81,6 @@
       <p class="text-[18px]">Explore New place, food, culture around the world and many more</p>
     </div>
 </section>
-
 <app-activity-card></app-activity-card>
 
 <!-- section reviews -->
@@ -75,11 +92,10 @@
 </section>
 <app-reviews></app-reviews>
 
-<!-- Section Metrics -->
- <section class="borde-black border-[1px] text-center">
-  <h2>90 K+  listings</h2>
- </section>
+<!-- Section statistics -->
+<app-statistics></app-statistics>
 
+<!-- Section posts -->
 <section class="container max-w-6xl mx-auto px-6 text-center py-20">
   <h2 class="uppercase mb-6 tracking-wide text-[24px]">News and articles</h2>
   <p class="text-[18px]">Always upto date with our latest News and Articles</p>
@@ -164,3 +180,11 @@
     </div>
   </footer> 
 </section>
+
+<!-- Button de scrollTop -->
+<div id="scroll-Top" *ngIf="showScrollButton" class="fixed bottom-4 right-4">
+  <button (click)="scrollToTop()" 
+    class="return-to-top bg-[#ff545a] text-white border border-[#ff545a] rounded-full cursor-pointer 
+    w-[40px] h-[40px] flex items-center justify-center text-[20px]">
+    <span class=" font-medium animate-bounce">^</span></button >
+</div>

@@ -1,6 +1,7 @@
+<!-- section How it works -->
 <main>
-    <section class="how-it-works">       
-        <div class="feature-container max-w-6xl"> <!-- container mx-auto -->
+    <section class="my-8 text-center text-[24px] pb-[80px]">       
+        <div class="grid grid-cols-1 gap-6 justify-items-center max-w-6xl mx-auto mb-auto md:grid-cols-2 lg:grid-cols-3">
             <div *ngFor="let card of featureCards">
                 <div class="feature-card group duration-300">
                     <div class="icon-container">
@@ -10,7 +11,9 @@
                         <p>{{ card.label }}</p>
                     </h3>
                     <p class="card-paragraph">{{ card.texto }}</p>
-                    <a class="card-button" [href]="card.href || '#'">{{ card.href ? 'Read More' : 'Read More' }}</a>
+                    <a class="card-button" [href]="card.href || '#'">
+                        {{ card.href ? 'Read More' : 'Read More' }}
+                    </a>
                 </div>
             </div>
         </div>        
