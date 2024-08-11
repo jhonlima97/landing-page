@@ -20,6 +20,7 @@ js/react js/angular, en este caso se ha utilizado unicamente Angular y Tailwindc
 ✅ TypeScript version 5.4.2    
 ✅ Tailwindcss 3.4.6     
 ✅ slick-carousel 1.8.1  
+✅ countup.js 2.8.0  
 
 
 ## Build
