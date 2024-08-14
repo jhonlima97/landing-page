@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:listrace": "node dist/listrace/server/server.mjs"
+    "serve:ssr:listrace": "node dist/listrace/server/server.mjs",
+    "build:ssr": "ng build --configuration production && ng run listrace:server:production"
   },
   "private": true,
   "dependencies": {
