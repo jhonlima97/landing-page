@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ts-node src/server.ts",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -48,6 +48,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.6",
+    "ts-node": "^10.9.2",
     "typescript": "~5.4.2"
   }
 }

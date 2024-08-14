@@ -18,11 +18,23 @@ export function app(): express.Express {
   server.set('views', browserDistFolder);
 
   // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y'
   }));
+
+  // Serve JSON files - server.get('/api/**', (req, res) => { });
+  server.get('/api/explore', (req, res) => {
+    res.sendFile(join(serverDistFolder, '../src/assets/data/explore.json'));
+  });
+
+  server.get('/api/reviews', (req, res) => {
+    res.sendFile(join(serverDistFolder, '../src/assets/data/reviews.json'));
+  });
+
+  server.get('/api/posts', (req, res) => {
+    res.sendFile(join(serverDistFolder, '../src/assets/data/posts.json'));
+  });
 
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
@@ -49,7 +61,7 @@ function run(): void {
   // Start up the Node server
   const server = app();
   server.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
+    console.log(`Node Express server listening on: http://localhost:${port}`);
   });
 }
 
