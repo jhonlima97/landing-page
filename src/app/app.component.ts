@@ -54,6 +54,24 @@ export class AppComponent{
     }
   }
 
+  //For the inputs search in secction hero
+  open(event: FocusEvent): void {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement && 'placeholder' in inputElement) {
+      inputElement.dataset['placeholder'] = inputElement.placeholder ?? '';
+      inputElement.placeholder = '';
+    }
+  }
+
+  close(event: FocusEvent): void {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement && 'placeholder' in inputElement) {
+      if (inputElement.value === '') {
+        inputElement.placeholder = inputElement.dataset['placeholder'] || '';
+      }
+    }
+  }
+
   // Funtion for scroll
   showScrollButton = false;
 

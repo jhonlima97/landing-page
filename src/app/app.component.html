@@ -15,9 +15,9 @@
       <a href="#" class="py-3 px-5"><i class="fi fi-rr-search"></i></a>
     </div>
     
-    <div class="lg:w-auto pt-[10px] text-[12px] opacity-40 mx-5 justify-between">
+    <div class="lg:w-auto pt-[10px] text-[13px] opacity-40 mx-5 justify-between">
       <ul class="flex flex-wrap w-full gap-6 pb-4 md:w-fit md:gap-6 md:flex-row">
-        <a href="#">+51 97641888</a>
+        <a href="#">+51 976411888</a>
         <a href="#">Sign In</a>
         <a href="#">Register</a>
        </ul>     
@@ -60,11 +60,69 @@
     <h2 class="text-[24px] text-white uppercase font-bold tracking-[2.4px] text-pretty md:text-[40px] md:px-12 lg:text-[48px]">
       best place to find and explore that all you need 
     </h2>
-    <p class="text-white text-[18px] mt-[25px] px-10">
+    <p class="text-white text-[20px] mt-[25px] px-10">
       Find Best Place, Restaurant, Hotel, Real State and many more think in just One click
     </p>
+
+    <!-- Search Form: -->
+    <div class="welcome-hero-serch-box opacity-100 mt-[50px]">
+      <!-- ml-[70px] el gap-6 para el mobile, baja el boton -->
+      <div class="welcome-hero-form flex flex-col lg:flex-row md:gap-6 gap-6">
+        <!-- forms el gap-6 para el space entre inputs -->
+        <div class="flex flex-col md:flex-row md:ml-[-4.5px] lg:ml-[1px] gap-6 md:gap-0 lg:py-4">
+          <!-- What Input -->
+          <div class="single-welcome-hero-form flex flex-col md:flex-row ml-[-14px] md:mt-0 bg-white py-3 lg:rounded">
+            <div class="flex flex-row justify-between">
+              <h3 class="text-[18px] py-2 lg:py-3 font-bold md:mx-6 ml-[45%] md:pt-4">What?</h3>
+              <div class="welcome-hero-form-icon py-2 lg:py-3 mx-5 text-[18px] md:pt-4">
+                <i class="fi fi-rr-search"></i>
+              </div>
+            </div>
+            <form action="#" class="flex-1">
+              <input type="text" placeholder="Ex: place, restaurant, food, automobile" 
+                class="w-full md:w-[200px] lg:w-[250px] sm:w-full py-4 lg:py-3 text-center focus:outline-none"
+                (focus)="open($event)" (blur)="close($event)">
+            </form>
+          </div>
+          
+          <!-- Location Input -->
+          <div class="single-welcome-hero-form flex flex-col md:flex-row ml-[-14px] md:mt-0 bg-white py-3 lg:rounded">
+            <div class="flex flex-row justify-between">
+              <h3 class="text-[18px] py-2 lg:py-3 font-bold md:mx-6 ml-[40%]">Location</h3>
+              <div class="welcome-hero-form-icon py-2 lg:py-3 mx-5 text-[18px] md:pt-4">
+                <i class="fi fi-rr-search"></i>
+              </div>
+            </div>
+            <form action="#" class="flex-1">
+              <input type="text" placeholder="Ex: London, New York, Rome" 
+                class="w-full md:w-[232px] lg:w-[250px] py-4 lg:py-3 text-center focus:outline-none"
+                (focus)="open($event)" (blur)="close($event)">
+            </form>
+          </div>
+        </div>
+              
+
+        <!-- Search Button -->
+        <div class="welcome-hero-serch md:mt-0 flex lg:flex-row md:justify-center justify-center lg:py-[16px]">
+          <button class="welcome-hero-btn bg-red-500 text-white py-6 px-16 xl:px-16 lg:px-6 md:px-16 
+                        hover:bg-red-600 focus:outline-none flex items-center rounded">Search 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 feather feather-search">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg> 
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- End of Search Form -->
+
   </div>
 </section>
+
+
+
+<!-- Section card listings -->
 <app-category-card></app-category-card>
 
 <!-- section How it works pb-abajo pt-arriba-->

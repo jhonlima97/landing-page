@@ -22,7 +22,6 @@ export class StatisticsComponent implements AfterViewInit{
 
   ngAfterViewInit() {
     if (this.platformService.isBrowser()) {
-      // Solo ejecuta este código en el navegador
       this.statistics.forEach(stat => {
         const options = {
           startVal: stat.start,
