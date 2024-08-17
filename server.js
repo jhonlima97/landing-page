@@ -22,10 +22,14 @@ app.get('/api/posts', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/listrace/browser/assets/data/posts.json'));
 });
 
-
-// Redirigir todas las rutas a index.html (manejar rutas de Angular)
+// Redirigir todas las rutas no API a index.html
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/listrace/browser/index.html'));
+  // Solo redirigir si la ruta no es /api/*
+  if (!req.originalUrl.startsWith('/api/')) {
+    res.sendFile(path.join(__dirname, 'dist/listrace/browser/index.html'));
+  } else {
+    res.status(404).send('Not Found'); // Puedes ajustar esto según sea necesario
+  }
 });
 
 app.listen(PORT, () => {
