@@ -2,18 +2,18 @@
     "version": 2,
     "builds": [
       {
-        "src": "dist/listrace/browser/**/*",
-        "use": "@vercel/static"
-      },
-      {
         "src": "server.js",
         "use": "@vercel/node"
+      },
+      {
+        "src": "dist/listrace/**/*",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "/api/$1"
+        "dest": "/server.js"
       },
       {
         "src": "/(.*)",
