@@ -2,10 +2,10 @@
     "version": 2,
     "builds": [
       {
-        "src": "src/**/*",
-        "use": "@vercel/static-build",
+        "src": "src/main.server.ts",
+        "use": "@vercel/node",
         "config": {
-          "distDir": "dist/listrace/browser"
+          "includeFiles": "dist/listrace/**/*"
         }
       }
     ],
