@@ -4,6 +4,10 @@
       {
         "src": "dist/listrace/browser/**/*",
         "use": "@vercel/static"
+      },
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
       }
     ],
     "routes": [
