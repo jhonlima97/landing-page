@@ -1,7 +1,7 @@
 # Project: Discovery Landing Page
 
 # Developing environment  
-Run `ng start` for a dev server. For default to `http://localhost:4200/`.  
+Run `npm start` for a dev server. For default to `http://localhost:4200/`.  
 
 To test the API: run node server.js  
 endpoints: explore, reviews, posts  
