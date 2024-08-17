@@ -2,11 +2,8 @@
     "version": 2,
     "builds": [
       {
-        "src": "src/main.server.ts",
-        "use": "@vercel/node",
-        "config": {
-          "includeFiles": "dist/listrace/**/*"
-        }
+        "src": "dist/listrace/browser/**/*",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
@@ -19,4 +16,5 @@
         "dest": "/index.html"
       }
     ]
-  }  
+  }
+  
