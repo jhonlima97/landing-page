@@ -21,6 +21,8 @@ js/react js/angular, in this case only Angular and Tailwindcss have been used.
 ✅ countup.js 2.8.0  
 
 # Production environment  
+Solo me falta configurar para produccion
+
 
 ## Build
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.  

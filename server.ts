@@ -1,3 +1,7 @@
+//Este file sirve para el Server-Side Rendering (SSR), ya que maneja la
+//renderización en el servidor de tus vistas Angular, y proporciona la funcionalidad
+//para servir contenido renderizado en el servidor antes de enviarlo al cliente
+
 import { APP_BASE_HREF } from '@angular/common';
 import { CommonEngine } from '@angular/ssr';
 import express from 'express';
@@ -22,19 +26,6 @@ export function app(): express.Express {
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y'
   }));
-
-  // Serve JSON files - server.get('/api/**', (req, res) => { });
-  server.get('/api/explore', (req, res) => {
-    res.sendFile(join(serverDistFolder, '../src/assets/data/explore.json'));
-  });
-
-  server.get('/api/reviews', (req, res) => {
-    res.sendFile(join(serverDistFolder, '../src/assets/data/reviews.json'));
-  });
-
-  server.get('/api/posts', (req, res) => {
-    res.sendFile(join(serverDistFolder, '../src/assets/data/posts.json'));
-  });
 
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {

@@ -1,7 +1,7 @@
 <main>
     <section class="bg-[#f8fafb] pb-[100px]">
-        <div class="activity-container mx-auto px-8 sm:px-12 lg:px-24 border-[#edeff1] border-[1px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div *ngFor="let card of activityCards" class="border border-[#edeff1] rounded overflow-hidden shadow-activity-card">
+        <div class="activity-container mx-auto px-8 sm:px-12 lg:px-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div *ngFor="let card of activityCards" class="border border-[#edeff1] rounded overflow-hidden hover:shadow-section-explore duration-300">
                 <div class="image relative h-[250.3px] contrast-[.6] overflow-hidden">
                     <img [src]="card.image" alt="{{card.name}}" class="w-full h-full object-cover">
                 </div>
@@ -33,7 +33,23 @@
                         <p [ngClass]="{'text-green': card.status, 'text-primary-600': !card.status}" class="text-[12px]">
                             {{card.status ? 'Open Now' : 'Closed Now'}}
                         </p>
-                        <p>Iconos</p>
+                        <p class="flex justify-between opacity-40 gap-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" 
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" 
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" 
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+
+                        </p>
                     </div>
                 </div>
             </div>
