@@ -25,4 +25,4 @@ Access to: [Discovery Landing Page](https://discovery-lp.vercel.app/)
 To test the APIs in production:  
 endpoints: explore, reviews, posts  
 
-Access to: [APIs IN PRODUCTION](https://discovery-lp.vercel.app/api/endpoints) and search for the endpoint you want.  
+Access to: [APIs IN PRODUCTION](https://discovery-lp.vercel.app/api/explore) and search for the endpoint you want.  
