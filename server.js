@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 // Servir los archivos estáticos desde la carpeta browser
 app.use(express.static(path.join(__dirname, 'dist/listrace/browser')));
 
-// Endpoints de la API
+// Endpoints for the API
 app.get('/api/explore', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/listrace/browser/assets/data/explore.json'));
 });
@@ -31,7 +31,7 @@ app.get('*', (req, res) => {
   if (!req.originalUrl.startsWith('/api/')) {
     res.sendFile(path.join(__dirname, 'dist/listrace/browser/index.html'));
   } else {
-    res.status(404).send('Not Found'); // Puedes ajustar esto según sea necesario
+    res.status(404).send('Data not found or endpoint does not exist');
   }
 });
 
