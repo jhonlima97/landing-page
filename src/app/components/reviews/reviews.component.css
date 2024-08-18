@@ -1,26 +1,20 @@
-.reviews-section {
-  padding: 20px 20px;
-}
-
 .carousel {
   margin: 0 auto;
-  padding: 0 20px;
   width: 100%;
   box-sizing: border-box;
-  /* border: 1px solid; */
 }
 
 .slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 10px;  /*espaciado entre cards*/
   transition: opacity 0.3s;
 }
 
 .review-card {
-  width: 395px;
-  height: 275.75px;
+  width: 400px;
+  height: 280px;
   box-sizing: border-box;
   padding: 20px;
   border: 1px solid #ddd;
@@ -76,7 +70,7 @@
 }
 
 .slick-slide {
-  opacity: 0.4; /* menos aumneta la opacidad */
+  opacity: 0.4; /* menos aumenta la opacidad */
   transition: opacity 0.3s;
 }
 
@@ -87,19 +81,16 @@
 /* Responsive */
 @media (min-width: 480px) {
   .carousel {
-    width: 100%; /* Ancho para dispositivos móviles pequeños */
-  }
-}
-
-@media (min-width: 640px) {
-  .carousel {
-    width: 80%; /* Ancho para tablets y dispositivos medianos */
+    width: 100%; /* Ancho para dispositivos móviles */
   }
 }
 
 @media (min-width: 768px) {
   .carousel {
     width: 100%; /* Ancho para tablets y dispositivos medianos */
+  }
+  .review-card {
+    padding: 10px;
   }
 }
 
