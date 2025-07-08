@@ -1,30 +1,45 @@
 <main>
-  <section class="reviews-section 
-    lg:pt-[60px] lg:px-20 lg:pb-[100px] 
-    md:pt-[60px] md:pb-[100px] 
-    pt-[60px] pb-[100px]">
-    <ngx-slick-carousel class="carousel" [config]="slideConfig">
-      <div ngxSlickItem *ngFor="let review of reviews" class="slide">
-        <div class="review-card">
-          <div class="testimonial-info lg:pt-12 md:pt-8 pt-5">
-            <div class="testimonial-img">
-              <img [src]="review.image" alt="{{review.client}}" class="review-image" />
-            </div>
-            <div class="testimonial-person">
-              <h2>{{review.client}}</h2>
-              <h4>{{review.location}}</h4>
-              <div class="testimonial-person-star">
-                <i class="fi fi-ss-star"></i>
-                <i class="fi fi-ss-star"></i>
-                <i class="fi fi-ss-star"></i>
-                <i class="fi fi-ss-star"></i>
-                <i class="fi fi-ss-star"></i>
+  <section class="reviews-section lg:pt-[60px] lg:px-20 lg:pb-[100px] md:pt-[60px] md:pb-[100px] pt-[60px] pb-[100px]">
+    <swiper
+      [slidesPerView]="3"
+      [spaceBetween]="30"
+      [loop]="true"
+      [autoplay]="{ delay: 1000 }"
+      [breakpoints]="{
+        '1024': { slidesPerView: 3 },
+        '768': { slidesPerView: 2 },
+        '480': { slidesPerView: 1 }
+      }"
+      class="carousel"
+    >
+      <ng-template swiperSlide *ngFor="let review of reviews">
+        <div class="slide">
+          <div class="review-card">
+            <div class="testimonial-info lg:pt-12 md:pt-8 pt-5">
+              <div class="testimonial-img">
+                <img [src]="review.image" alt="{{review.client}}" class="review-image" />
+              </div>
+              <div class="testimonial-person">
+                <h2>{{review.client}}</h2>
+                <h4>{{review.location}}</h4>
+                <div class="testimonial-person-star">
+                  <i class="fi fi-ss-star"></i>
+                  <i class="fi fi-ss-star"></i>
+                  <i class="fi fi-ss-star"></i>
+                  <i class="fi fi-ss-star"></i>
+                  <i class="fi fi-ss-star"></i>
+                </div>
               </div>
             </div>
+            <p class="review-testimonial">{{review.testimonial}}</p>
           </div>
-          <p class="review-testimonial">{{review.testimonial}}</p>
         </div>
-      </div>
-    </ngx-slick-carousel>    
+      </ng-template>
+    </swiper>
   </section>
 </main>
+
+<script>
+  import SwiperCore, { Autoplay } from 'swiper';
+  SwiperCore.use([Autoplay]);
+</script>

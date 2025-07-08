@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
+import { SwiperModule } from 'swiper/angular';
 import { Component, OnInit } from '@angular/core';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ReviewsService } from '../../api/reviews.service';
+
 
 interface ReviewCard {
   id: number;
@@ -14,7 +15,7 @@ interface ReviewCard {
 
 @Component({
     selector: 'app-reviews',
-    imports: [CommonModule, HttpClientModule, SlickCarouselModule],
+    imports: [CommonModule, provideHttpClient(), SwiperModule],
     templateUrl: './reviews.component.html',
     styleUrls: ['./reviews.component.css'],
     providers: [ReviewsService]
