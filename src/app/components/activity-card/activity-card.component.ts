@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExploreService } from '../../api/explore.service';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 
 interface ActivityCard {
   id: number;
@@ -19,9 +19,9 @@ interface ActivityCard {
 
 @Component({
     selector: 'app-activity-card',
-    imports: [CommonModule, HttpClientModule],
+    imports: [CommonModule],
     templateUrl: './activity-card.component.html',
-    providers: [ExploreService]
+    providers: [ExploreService, provideHttpClient()],
 })
 
 export class ActivityCardComponent implements OnInit {
