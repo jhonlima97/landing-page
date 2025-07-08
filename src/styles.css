@@ -2,3 +2,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+  swiper-slide.swiper-slide-next .card-fade,
+  swiper-slide.swiper-slide-prev .card-fade {
+    @apply opacity-40 scale-[0.95] blur-[1px];
+  }
+
+  swiper-slide.swiper-slide-active .card-fade {
+    @apply opacity-100 scale-100 blur-0;
+  }
+}

@@ -1,7 +1,10 @@
-
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, AfterViewInit,Inject, PLATFORM_ID } from '@angular/core';
 import 'swiper/element/bundle';
-import { Component, OnInit } from '@angular/core';
+import { register } from 'swiper/element/bundle';
+register(); // 🔥 Activa Swiper Element antes del render
+
+import { isPlatformBrowser } from '@angular/common';
+
 import { ReviewsService } from '../../api/reviews.service';
 
 
@@ -20,49 +23,43 @@ interface ReviewCard {
   providers: [ReviewsService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // Permite el uso de Swiper Element
 })
-export class ReviewsComponent implements OnInit {
+
+export class ReviewsComponent implements OnInit, AfterViewInit {
   reviews: ReviewCard[] = [];
 
-  slideConfig = {
-    slidesToShow: 3,  // Muestra 3 crds
-    slidesToScroll: 1,
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    centerMode: true, // Centra el slide activo
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
 
-  constructor(private reviewsService: ReviewsService) {}
+  constructor(private reviewsService: ReviewsService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit(): void {
-    this.reviewsService.getReviewsData().subscribe((data: ReviewCard[]) => {
-      this.reviews = data;
-    }, (error) => {
-      console.error('Error fetching reviews data', error);
-    });
+  this.reviewsService.getReviewsData().subscribe((data: ReviewCard[]) => {
+    this.reviews = data;
+
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        const swiperEl = document.querySelector('swiper-container');
+        if (swiperEl) swiperEl.initialize();
+      }, 0);
+    }
+  }, (error) => {
+    console.error('Error fetching reviews data', error);
+  });
+}
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+    const swiperEl = document.querySelector('swiper-container');
+    if (swiperEl) {
+      swiperEl.addEventListener('activeIndexChange', () => {
+        const activeIndex = swiperEl.swiper.activeIndex;
+        const slides = swiperEl.querySelectorAll('swiper-slide');
+        slides.forEach((slide, i) => {
+          const isCentered = i === activeIndex + 1;
+          slide.classList.toggle('center-slide', isCentered);
+        });
+      });
+    }
+  }
   }
 }
