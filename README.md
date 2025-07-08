@@ -12,12 +12,12 @@ A technical test has been developed for a Senior Front-End position, the pdf ind
 js/react js/angular, in this case only Angular and Tailwindcss have been used.  
 
 # Technologies used  
-✅ Angular CLI version 20.0.5  
-✅ Node JS version 22.13.1    
-✅ TypeScript version 5.8.3      
-✅ Tailwindcss 3.4.17       
-✅ swiper 11.2.10    
-✅ countup.js 2.9.0  
+✅ Angular CLI v20.0.5  
+✅ Node JS v22.13.1    
+✅ TypeScript v5.8.3      
+✅ Tailwindcss v3.4.17       
+✅ swiper v11.2.10    
+✅ countup.js v2.9.0  
 
 # Production environment  
 Access to: [Discovery Landing Page](https://discovery-lp.vercel.app/)  
