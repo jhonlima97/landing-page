@@ -1,28 +1,28 @@
 <main>
   <section class="reviews-section lg:pt-[60px] lg:px-20 lg:pb-[100px] md:pt-[60px] md:pb-[100px] pt-[60px] pb-[100px]">
-    <swiper
-      [slidesPerView]="3"
-      [spaceBetween]="30"
-      [loop]="true"
-      [autoplay]="{ delay: 1000 }"
-      [breakpoints]="{
-        '1024': { slidesPerView: 3 },
-        '768': { slidesPerView: 2 },
-        '480': { slidesPerView: 1 }
-      }"
+    <swiper-container
+      slides-per-view="3"
+      space-between="30"
+      loop="true"
+      autoplay-delay="1000"
+      breakpoints='{
+        "1024": { "slidesPerView": 3 },
+        "768": { "slidesPerView": 2 },
+        "480": { "slidesPerView": 1 }
+      }'
       class="carousel"
-      >
-      @for (review of reviews; track review) {
-        <ng-template swiperSlide>
+    >
+      @for (review of reviews; track review.id) {
+        <swiper-slide>
           <div class="slide">
             <div class="review-card">
               <div class="testimonial-info lg:pt-12 md:pt-8 pt-5">
                 <div class="testimonial-img">
-                  <img [src]="review.image" alt="{{review.client}}" class="review-image" />
+                  <img [src]="review.image" [alt]="review.client" class="review-image" />
                 </div>
                 <div class="testimonial-person">
-                  <h2>{{review.client}}</h2>
-                  <h4>{{review.location}}</h4>
+                  <h2>{{ review.client }}</h2>
+                  <h4>{{ review.location }}</h4>
                   <div class="testimonial-person-star">
                     <i class="fi fi-ss-star"></i>
                     <i class="fi fi-ss-star"></i>
@@ -32,16 +32,11 @@
                   </div>
                 </div>
               </div>
-              <p class="review-testimonial">{{review.testimonial}}</p>
+              <p class="review-testimonial">{{ review.testimonial }}</p>
             </div>
           </div>
-        </ng-template>
+        </swiper-slide>
       }
-    </swiper>
+    </swiper-container>
   </section>
 </main>
-
-<script>
-  import SwiperCore, { Autoplay } from 'swiper';
-  SwiperCore.use([Autoplay]);
-</script>
