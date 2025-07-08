@@ -11,9 +11,8 @@ interface FeatureCard {
 @Component({
     selector: 'app-feature-card',
     imports: [CommonModule],
-    templateUrl: './feature-card.component.html',
-    styleUrls: ['./feature-card.component.css']
-})
+    templateUrl: './feature-card.component.html'
+  })
 export class FeatureCardComponent {
 
   @Input() cardData: FeatureCard = { 

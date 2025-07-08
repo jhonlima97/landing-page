@@ -4,15 +4,24 @@
     <div class="grid grid-cols-1 gap-6 justify-items-center max-w-6xl mx-auto mb-auto md:grid-cols-2 lg:grid-cols-3">
       @for (card of featureCards; track card) {
         <div>
-          <div class="feature-card group duration-300">
-            <div class="icon-container">
+          <div
+            class="text-center flex flex-col items-center gap-4 px-[50px] py-[50px] w-full max-w-[360px] transition-colors duration-300 shadow-[0_0_5px_rgba(71,71,71,.2)] hover:bg-[#ff545a] group"
+          >
+            <div
+              class="bg-[#eef2f6] rounded-full py-2 px-3 flex justify-center items-center w-[5rem] h-[5rem]"
+            >
               <i [ngClass]="card.icon"></i>
             </div>
-            <h3 class="card-heading">
+            <h3 class="text-[1.25rem] font-bold group-hover:text-white">
               <p>{{ card.label }}</p>
             </h3>
-            <p class="card-paragraph">{{ card.texto }}</p>
-            <a class="card-button" [href]="card.href || '#'">
+            <p class="text-[1rem] my-2 group-hover:text-white">
+              {{ card.texto }}
+            </p>
+            <a
+              class="text-[#333] text-[12px] border border-[#d3d6d9] p-2 w-fit no-underline mt-[-0.5rem] group-hover:text-white"
+              [href]="card.href || '#'"
+            >
               {{ card.href ? 'Read More' : 'Read More' }}
             </a>
           </div>
