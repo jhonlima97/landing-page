@@ -16,7 +16,7 @@ js/react js/angular, in this case only Angular and Tailwindcss have been used.
 ✅ Node JS v22.13.1    
 ✅ TypeScript v5.8.3      
 ✅ Tailwindcss v3.4.17       
-✅ swiper v9.4.1      
+✅ swiper v11.2.10        
 ✅ countup.js v2.9.0  
 
 # Production environment  

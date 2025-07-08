@@ -1,5 +1,4 @@
 
-import { HttpClientModule } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { PostsService } from '../../api/posts.service';
 
@@ -16,7 +15,7 @@ interface PostCard {
 
 @Component({
     selector: 'app-posts',
-    imports: [HttpClientModule],
+    imports: [],
     templateUrl: './posts.component.html',
     providers: [PostsService]
 })

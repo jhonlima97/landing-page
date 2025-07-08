@@ -1,5 +1,6 @@
 
-import { SwiperModule } from 'swiper/angular';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import 'swiper/element/bundle';
 import { Component, OnInit } from '@angular/core';
 import { ReviewsService } from '../../api/reviews.service';
 
@@ -14,10 +15,11 @@ interface ReviewCard {
 
 @Component({
   selector: 'app-reviews',
-  imports: [SwiperModule],
+  imports: [],
   templateUrl: './reviews.component.html',
   styleUrls: ['./reviews.component.css'],
-  providers: [ReviewsService, ]
+  providers: [ReviewsService],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] // Permite el uso de Swiper Element
 })
 export class ReviewsComponent implements OnInit {
   reviews: ReviewCard[] = [];

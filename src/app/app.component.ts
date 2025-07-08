@@ -1,5 +1,4 @@
 import { Component, HostListener } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { EmailService } from './api/email.service';
 import { FormsModule } from '@angular/forms';
@@ -13,13 +12,13 @@ import { StatisticsComponent } from "./components/statistics/statistics.componen
 
 @Component({
     selector: 'app-root',
-    imports: [FormsModule, RouterOutlet, CommonModule,
-        CategoryCardComponent,
-        FeatureCardComponent,
-        ActivityCardComponent,
-        ReviewsComponent,
-        PostsComponent,
-        StatisticsComponent],
+    imports: [FormsModule, CommonModule,
+      CategoryCardComponent,
+      FeatureCardComponent,
+      ActivityCardComponent,
+      ReviewsComponent,
+      PostsComponent,
+      StatisticsComponent],
     templateUrl: './app.component.html'
 })
 
