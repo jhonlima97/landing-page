@@ -3,7 +3,10 @@
 # Developing environment  
 Run `npm start` for a dev server. For default to `http://localhost:4200/`.  
 
-To test the API: run node server.js  
+To test the API run:  
+ng build  
+node server.js  
+
 endpoints: explore, reviews, posts  
 
 Access to:-----> http://localhost:3000/api/endpoints and search for the endpoint you want.      

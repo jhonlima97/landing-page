@@ -22,13 +22,12 @@ app.get('/api/posts', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/listrace/browser/assets/data/posts.json'));
 });
 
-//If we deploy to Netlify create the _redirects file
 //in the project root directory to handle routes
 
 // Redirigir todas las rutas no API a index.html
-app.get('*', (req, res) => {
+app.get('/{*splat}', (req, res) => {
   // Solo redirigir si la ruta no es /api/*
-  if (!req.originalUrl.startsWith('/api/')) {
+  if (!/^\/api\//.test(req.originalUrl)) {
     res.sendFile(path.join(__dirname, 'dist/listrace/browser/index.html'));
   } else {
     res.status(404).send('Data not found or endpoint does not exist');
