@@ -11,30 +11,32 @@
         '480': { slidesPerView: 1 }
       }"
       class="carousel"
-    >
-      <ng-template swiperSlide *ngFor="let review of reviews">
-        <div class="slide">
-          <div class="review-card">
-            <div class="testimonial-info lg:pt-12 md:pt-8 pt-5">
-              <div class="testimonial-img">
-                <img [src]="review.image" alt="{{review.client}}" class="review-image" />
-              </div>
-              <div class="testimonial-person">
-                <h2>{{review.client}}</h2>
-                <h4>{{review.location}}</h4>
-                <div class="testimonial-person-star">
-                  <i class="fi fi-ss-star"></i>
-                  <i class="fi fi-ss-star"></i>
-                  <i class="fi fi-ss-star"></i>
-                  <i class="fi fi-ss-star"></i>
-                  <i class="fi fi-ss-star"></i>
+      >
+      @for (review of reviews; track review) {
+        <ng-template swiperSlide>
+          <div class="slide">
+            <div class="review-card">
+              <div class="testimonial-info lg:pt-12 md:pt-8 pt-5">
+                <div class="testimonial-img">
+                  <img [src]="review.image" alt="{{review.client}}" class="review-image" />
+                </div>
+                <div class="testimonial-person">
+                  <h2>{{review.client}}</h2>
+                  <h4>{{review.location}}</h4>
+                  <div class="testimonial-person-star">
+                    <i class="fi fi-ss-star"></i>
+                    <i class="fi fi-ss-star"></i>
+                    <i class="fi fi-ss-star"></i>
+                    <i class="fi fi-ss-star"></i>
+                    <i class="fi fi-ss-star"></i>
+                  </div>
                 </div>
               </div>
+              <p class="review-testimonial">{{review.testimonial}}</p>
             </div>
-            <p class="review-testimonial">{{review.testimonial}}</p>
           </div>
-        </div>
-      </ng-template>
+        </ng-template>
+      }
     </swiper>
   </section>
 </main>

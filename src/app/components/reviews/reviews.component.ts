@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { provideHttpClient } from '@angular/common/http';
 import { SwiperModule } from 'swiper/angular';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +15,7 @@ interface ReviewCard {
 
 @Component({
   selector: 'app-reviews',
-  imports: [CommonModule, provideHttpClient, SwiperModule],
+  imports: [provideHttpClient, SwiperModule],
   templateUrl: './reviews.component.html',
   styleUrls: ['./reviews.component.css'],
   providers: [ReviewsService, ]

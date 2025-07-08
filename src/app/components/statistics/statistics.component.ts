@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, AfterViewInit } from '@angular/core';
 import { PlatformService } from '../../api/platform.service';
 import { CountUp } from 'countup.js';
 
 @Component({
     selector: 'app-statistics',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './statistics.component.html'
 })
 export class StatisticsComponent implements AfterViewInit{
