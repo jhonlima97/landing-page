@@ -12,16 +12,15 @@ import { PostsComponent } from "./components/posts/posts.component";
 import { StatisticsComponent } from "./components/statistics/statistics.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [FormsModule, RouterOutlet, CommonModule,
-    CategoryCardComponent,
-    FeatureCardComponent,
-    ActivityCardComponent,
-    ReviewsComponent,
-    PostsComponent, 
-    StatisticsComponent],
-  templateUrl: './app.component.html'
+    selector: 'app-root',
+    imports: [FormsModule, RouterOutlet, CommonModule,
+        CategoryCardComponent,
+        FeatureCardComponent,
+        ActivityCardComponent,
+        ReviewsComponent,
+        PostsComponent,
+        StatisticsComponent],
+    templateUrl: './app.component.html'
 })
 
 export class AppComponent{

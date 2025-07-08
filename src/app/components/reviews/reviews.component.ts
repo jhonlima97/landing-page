@@ -13,12 +13,11 @@ interface ReviewCard {
 }
 
 @Component({
-  selector: 'app-reviews',
-  standalone: true,
-  imports: [CommonModule, HttpClientModule, SlickCarouselModule],
-  templateUrl: './reviews.component.html',
-  styleUrls: ['./reviews.component.css'],
-  providers: [ReviewsService]
+    selector: 'app-reviews',
+    imports: [CommonModule, HttpClientModule, SlickCarouselModule],
+    templateUrl: './reviews.component.html',
+    styleUrls: ['./reviews.component.css'],
+    providers: [ReviewsService]
 })
 export class ReviewsComponent implements OnInit {
   reviews: ReviewCard[] = [];

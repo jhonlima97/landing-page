@@ -8,11 +8,10 @@ interface CategoryCard {
 }
 
 @Component({
-  selector: 'app-category-card',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './category-card.component.html',
-  styleUrls: ['./category-card.component.css']
+    selector: 'app-category-card',
+    imports: [CommonModule],
+    templateUrl: './category-card.component.html',
+    styleUrls: ['./category-card.component.css']
 })
 export class CategoryCardComponent {
   @Input() cardData: CategoryCard = { icon: '', name: '', counts: 0 };

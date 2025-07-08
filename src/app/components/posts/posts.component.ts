@@ -15,11 +15,10 @@ interface PostCard {
 }
 
 @Component({
-  selector: 'app-posts',
-  standalone: true,
-  imports: [CommonModule, HttpClientModule],
-  templateUrl: './posts.component.html',
-  providers: [PostsService]
+    selector: 'app-posts',
+    imports: [CommonModule, HttpClientModule],
+    templateUrl: './posts.component.html',
+    providers: [PostsService]
 })
 export class PostsComponent implements OnInit{
   @Input() cardData: PostCard = { 

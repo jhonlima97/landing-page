@@ -18,11 +18,10 @@ interface ActivityCard {
 }
 
 @Component({
-  selector: 'app-activity-card',
-  standalone: true,
-  imports: [CommonModule, HttpClientModule],
-  templateUrl: './activity-card.component.html',
-  providers: [ExploreService]
+    selector: 'app-activity-card',
+    imports: [CommonModule, HttpClientModule],
+    templateUrl: './activity-card.component.html',
+    providers: [ExploreService]
 })
 
 export class ActivityCardComponent implements OnInit {

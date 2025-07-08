@@ -9,11 +9,10 @@ interface FeatureCard {
 }
 
 @Component({
-  selector: 'app-feature-card',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './feature-card.component.html',
-  styleUrls: ['./feature-card.component.css']
+    selector: 'app-feature-card',
+    imports: [CommonModule],
+    templateUrl: './feature-card.component.html',
+    styleUrls: ['./feature-card.component.css']
 })
 export class FeatureCardComponent {
 

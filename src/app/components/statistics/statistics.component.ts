@@ -4,10 +4,9 @@ import { PlatformService } from '../../api/platform.service';
 import { CountUp } from 'countup.js';
 
 @Component({
-  selector: 'app-statistics',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './statistics.component.html'
+    selector: 'app-statistics',
+    imports: [CommonModule],
+    templateUrl: './statistics.component.html'
 })
 export class StatisticsComponent implements AfterViewInit{
 
