@@ -1,5 +1,4 @@
 
-import { provideHttpClient } from '@angular/common/http';
 import { SwiperModule } from 'swiper/angular';
 import { Component, OnInit } from '@angular/core';
 import { ReviewsService } from '../../api/reviews.service';
@@ -15,7 +14,7 @@ interface ReviewCard {
 
 @Component({
   selector: 'app-reviews',
-  imports: [provideHttpClient, SwiperModule],
+  imports: [SwiperModule],
   templateUrl: './reviews.component.html',
   styleUrls: ['./reviews.component.css'],
   providers: [ReviewsService, ]
