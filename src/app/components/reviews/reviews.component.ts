@@ -17,7 +17,6 @@ interface ReviewCard {
   selector: 'app-reviews',
   imports: [],
   templateUrl: './reviews.component.html',
-  styleUrls: ['./reviews.component.css'],
   providers: [ReviewsService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // Permite el uso de Swiper Element
 })

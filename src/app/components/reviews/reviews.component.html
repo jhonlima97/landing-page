@@ -1,5 +1,5 @@
 <main>
-  <section class="reviews-section lg:pt-[60px] lg:px-20 lg:pb-[100px] md:pt-[60px] md:pb-[100px] pt-[60px] pb-[100px]">
+  <section class="reviews-section pt-16 pb-24 px-4 md:px-10 lg:px-20 3xl:px-32">
     <swiper-container
       slides-per-view="3"
       space-between="30"
@@ -10,20 +10,18 @@
         "768": { "slidesPerView": 2 },
         "480": { "slidesPerView": 1 }
       }'
-      class="carousel"
+      class="w-full"
     >
       @for (review of reviews; track review.id) {
         <swiper-slide>
-          <div class="slide">
-            <div class="review-card">
-              <div class="testimonial-info lg:pt-12 md:pt-8 pt-5">
-                <div class="testimonial-img">
-                  <img [src]="review.image" [alt]="review.client" class="review-image" />
-                </div>
-                <div class="testimonial-person">
-                  <h2>{{ review.client }}</h2>
-                  <h4>{{ review.location }}</h4>
-                  <div class="testimonial-person-star">
+          <div class="flex justify-center px-4 py-6">
+            <div class="w-[380px] h-[280px] p-6 bg-white rounded-md shadow-feature-card text-paragraph text-left transition duration-300 hover:shadow-lg hover:scale-[1.02]">
+              <div class="flex items-center gap-4 pb-4 capitalize">
+                <img [src]="review.image" [alt]="review.client" class="w-12 h-12 rounded-full object-cover border border-light-gray" />
+                <div>
+                  <h2 class="text-lg font-bold text-dark-gray">{{ review.client }}</h2>
+                  <h4 class="text-sm font-medium text-light-gray">{{ review.location }}</h4>
+                  <div class="text-yellow flex gap-1 pt-2">
                     <i class="fi fi-ss-star"></i>
                     <i class="fi fi-ss-star"></i>
                     <i class="fi fi-ss-star"></i>
@@ -32,7 +30,7 @@
                   </div>
                 </div>
               </div>
-              <p class="review-testimonial">{{ review.testimonial }}</p>
+              <p class="text-sm font-light text-gray mt-2 line-clamp-3">{{ review.testimonial }}</p>
             </div>
           </div>
         </swiper-slide>

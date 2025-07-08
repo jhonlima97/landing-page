@@ -1,12 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,ts}",
-    "./src/app/**/*.{js,ts}",
-    "./src/app/components/**/*.{js,ts}",
+    "./src/**/*.{html,ts,js}",
   ],
   theme: {
     extend: {
+      padding: '1rem',
+      screens: {
+        //mobile devices     
+        'xs': '480px',
+        'sm': '640px',
+        //tablet devices
+        'md': '768px',  //from ipad mini
+        '2md': '820px', //from ipad air
+        '3md': '912px', //from surface pro 7
+        //desktop devices
+        'lg': '1024px', //from ipad pro
+        'xl': '1280px',
+        '2xl': '1536px',
+        '3xl': '1600px',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
