@@ -1,5 +1,7 @@
 # Project: Discovery Landing Page
 
+* Project migrated from Angular 17 to v20.
+
 # Developing environment  
 Run `npm start` for a dev server. For default to `http://localhost:4200/`.  
 
