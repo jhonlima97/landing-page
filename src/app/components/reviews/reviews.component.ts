@@ -4,7 +4,6 @@ import { register } from 'swiper/element/bundle';
 register(); // 🔥 Activa Swiper Element antes del render
 
 import { isPlatformBrowser } from '@angular/common';
-
 import { ReviewsService } from '../../api/reviews.service';
 
 
