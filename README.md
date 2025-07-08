@@ -31,3 +31,9 @@ To test the APIs in production:
 endpoints: explore, reviews, posts  
 
 Access to: [APIs IN PRODUCTION](https://discovery-lp.vercel.app/api/explore) and search for the endpoint you want.  
+
+## Cambios mas resaltantes en esta versión?  
+- Remplazo de las directivas @ngfor, @ngif, @ngSwitch por @if, @for, @switch  
+- Reemplazamos zone.js por Zoneless  
+- Reemplazo de HttpClientModule por provideHttpClient directo en el componente raiz.  
+

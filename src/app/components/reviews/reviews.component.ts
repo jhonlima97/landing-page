@@ -1,11 +1,9 @@
 import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, AfterViewInit,Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { ReviewsService } from '../../api/reviews.service';
 import 'swiper/element/bundle';
 import { register } from 'swiper/element/bundle';
 register(); // 🔥 Activa Swiper Element antes del render
-
-import { isPlatformBrowser } from '@angular/common';
-import { ReviewsService } from '../../api/reviews.service';
-
 
 interface ReviewCard {
   id: number;
