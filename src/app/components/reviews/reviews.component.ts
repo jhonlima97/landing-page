@@ -1,4 +1,4 @@
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, AfterViewInit,Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, AfterViewInit,Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ReviewsService } from '../../api/reviews.service';
 import 'swiper/element/bundle';
@@ -21,42 +21,75 @@ interface ReviewCard {
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // Permite el uso de Swiper Element
 })
 
-export class ReviewsComponent implements OnInit, AfterViewInit {
+export class ReviewsComponent implements OnInit, AfterViewInit, OnDestroy {
   reviews: ReviewCard[] = [];
+  private swiperInitialized = false;
 
-
-  constructor(private reviewsService: ReviewsService,
+  constructor(
+    private reviewsService: ReviewsService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit(): void {
-  this.reviewsService.getReviewsData().subscribe((data: ReviewCard[]) => {
-    this.reviews = data;
-
-    if (isPlatformBrowser(this.platformId)) {
-      setTimeout(() => {
-        const swiperEl = document.querySelector('swiper-container');
-        if (swiperEl) swiperEl.initialize();
-      }, 0);
-    }
-  }, (error) => {
-    console.error('Error fetching reviews data', error);
-  });
-}
+    this.reviewsService.getReviewsData().subscribe((data: ReviewCard[]) => {
+      this.reviews = data;
+      // Reinicializar Swiper después de que los datos cambien
+      this.initializeSwiper();
+    }, (error) => {
+      console.error('Error fetching reviews data', error);
+    });
+  }
 
   ngAfterViewInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-    const swiperEl = document.querySelector('swiper-container');
-    if (swiperEl) {
-      swiperEl.addEventListener('activeIndexChange', () => {
-        const activeIndex = swiperEl.swiper.activeIndex;
-        const slides = swiperEl.querySelectorAll('swiper-slide');
-        slides.forEach((slide, i) => {
-          const isCentered = i === activeIndex + 1;
-          slide.classList.toggle('center-slide', isCentered);
-        });
-      });
+    // Solo inicializar si no se ha hecho ya
+    if (!this.swiperInitialized) {
+      this.initializeSwiper();
     }
   }
+
+  ngOnDestroy(): void {
+    // Limpiar al destruir el componente
+    if (isPlatformBrowser(this.platformId)) {
+      const swiperEl = document.querySelector('swiper-container');
+      if (swiperEl && swiperEl.swiper) {
+        swiperEl.swiper.destroy();
+      }
+    }
+  }
+
+  private initializeSwiper(): void {
+    if (!isPlatformBrowser(this.platformId) || this.reviews.length === 0) {
+      return;
+    }
+
+    setTimeout(() => {
+      const swiperEl = document.querySelector('swiper-container') as any;
+      if (swiperEl) {
+        // Destruir instancia previa si existe
+        if (swiperEl.swiper) {
+          swiperEl.swiper.destroy();
+        }
+
+        // Inicializar Swiper
+        swiperEl.initialize();
+        this.swiperInitialized = true;
+
+        // Agregar event listener para slides activos
+        swiperEl.addEventListener('activeIndexChange', () => {
+          const activeIndex = swiperEl.swiper.activeIndex;
+          const slides = swiperEl.querySelectorAll('swiper-slide');
+          slides.forEach((slide: Element, i: number) => {
+            const isCentered = i === activeIndex + 1;
+            slide.classList.toggle('center-slide', isCentered);
+          });
+        });
+      }
+    }, 100); // Aumenté el timeout para asegurar que el DOM esté listo
+  }
+
+  // Método para forzar reinicialización (útil para desarrollo)
+  reinitializeSwiper(): void {
+    this.swiperInitialized = false;
+    this.initializeSwiper();
   }
 }

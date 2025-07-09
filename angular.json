@@ -74,12 +74,15 @@
               "buildTarget": "listrace:build:production"
             },
             "development": {
-              "buildTarget": "listrace:build:development"
+              "buildTarget": "listrace:build:development",
+              "hmr": true,
+              "liveReload": true
             }
           },
           "defaultConfiguration": "development",
           "options": {
             "proxyConfig": "proxy.conf.json"
+            
           }
         },
         "extract-i18n": {
