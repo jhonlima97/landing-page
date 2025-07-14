@@ -1,22 +1,23 @@
 <!-- pb-abajo  pt-arriba-->
 <main>
-  <section class="container mx-auto max-w-6xl my-[50px] pt-[30px] relative">
+  <section class="mx-auto max-w-6xl my-[50px] pt-[30px] relative">
     <div
-      class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-1 justify-items-center md:absolute md:w-full md:-top-[150px]"
-    >
+      class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-5 
+                gap-1 justify-items-center md:absolute md:w-full md:-top-[150px]" >
       @for (card of categoryCards; track $index) {
         <div
-          class="flex flex-col items-center text-center p-8 border border-gray-200 rounded-[0.3rem] bg-white shadow-[0_4px_6px_rgba(0,0,0,0.1)] w-[205px] h-[170px] box-border transition-colors duration-300 hover:bg-[#ff545a] group"
+          class="flex flex-col items-center text-center p-8 rounded-md 
+                    bg-white shadow-md w-[205px] h-[170px] box-border 
+                    transition-colors duration-300 group hover:bg-[#ff545a]"
         >
-          <div class="mb-2 text-[2rem]">
-            <i [ngClass]="card.icon"></i>
+          <div class="single-lit-topics-icon">
+            <i [ngClass]="card.icon" class="text-3xl mb-2"></i>
           </div>
-          <h2 class="text-[1.2rem] font-medium mb-1 group-hover:text-white">
+           <h2 class="text-xl font-medium mb-1 group-hover:text-white">
             {{ card.name }}
           </h2>
-          <p class="text-[1rem] text-gray-500 group-hover:text-white">
-            {{ card.counts | number }} listings
-          </p>
+          <p class="text-base text-gray-600 group-hover:text-white">{{ card.counts | number }} listings</p>
+          
         </div>
       }
     </div>

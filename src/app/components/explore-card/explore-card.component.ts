@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExploreService } from '../../api/explore.service';
 
-interface ActivityCard {
+interface ExploreCard {
   id: number;
   name: string;
   rating: string;
@@ -17,14 +17,14 @@ interface ActivityCard {
 }
 
 @Component({
-  selector: 'app-activity-card',
+  selector: 'app-explore-card',
   imports: [CommonModule],
-  templateUrl: './activity-card.component.html',
+  templateUrl: './explore-card.component.html',
   providers: [ExploreService],
 })
 
-export class ActivityCardComponent implements OnInit {
-  @Input() cardData: ActivityCard = { 
+export class ExploreCardComponent implements OnInit {
+  @Input() cardData: ExploreCard = { 
     id: 0, 
     name: '', 
     rating: '', 
@@ -38,7 +38,7 @@ export class ActivityCardComponent implements OnInit {
     status: true,
   };
 
-  activityCards: ActivityCard[] = [];
+  activityCards: ExploreCard[] = [];
 
   constructor(private exploreService: ExploreService) {}
 

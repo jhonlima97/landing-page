@@ -1,52 +1,59 @@
-<!-- section navbar border-gray border-[0.5px] -->
-<section>
-  <div class="flex flex-wrap justify-start items-center lg:justify-between md:justify-between">
-    <div class="lg:w-auto opacity-40 text-[12px] lg:mx-0 justify-between">
-      <select name="languaje" id="languaje" class="py-3 px-5">
-        <option value="EN">EN</option>
-        <option value="BN">BN</option>
-        <option value="AB">AB</option>
+<!-- Header -->
+<header class="absolute top-0 left-0 w-full bg-white z-50 text-[13px] text-[#859098] py-4 px-6">
+  <div class="flex flex-wrap items-center justify-center md:justify-between lg:justify-between max-w-6xl mx-auto border-b border-[#f6f8fa]">
+    
+    <!-- 🔄 Selectores -->
+    <div class="flex items-center gap-0 px-0">
+      <select name="languaje" id="languaje"
+        class="uppercase cursor-pointer py-[10px] px-[16px] border-r border-[#f6f8fa]">
+        <option value="default">en</option>
+        <option value="Bangla">bn</option>
+        <option value="Arabic">ab</option>
       </select>
-      <select name="moneda" id="moneda" class="py-3 px-5">
-        <option value="USD">USD</option>
-        <option value="EURO">EURO</option>
-        <option value="BDT">BDT</option>
+
+      <select name="moneda" id="moneda"
+        class="uppercase cursor-pointer py-[10px] px-[16px] border-r border-[#f6f8fa]">
+        <option value="usd">usd</option>
+        <option value="euro">euro</option>
+        <option value="bdt">bdt</option>
       </select>
-      <a href="#" class="py-3 px-5"><i class="fi fi-rr-search"></i></a>
+
+      <a href="#"
+        class="uppercase cursor-pointer py-[10px] px-[16px] border-r border-[#f6f8fa]">
+        <i class="fi fi-rr-search text-[14px]"></i>
+      </a>
     </div>
 
-    <div class="lg:w-auto pt-[10px] text-[13px] opacity-40 mx-5 justify-between">
-      <ul class="flex flex-wrap w-full gap-6 pb-4 md:w-fit md:gap-6 md:flex-row">
-        <a href="#">+51 976411888</a>
-        <a href="#">Sign In</a>
-        <a href="#">Register</a>
-      </ul>
+    <!-- 📞 Enlaces -->
+    <div class="flex items-center gap-6 px-6 text-[13px]">
+      <span class="py-[10px] px-[16px] border-l border-[#f6f8fa]">+51 976 411 888</span>
+      <a href="#" class="py-[10px] px-[16px] border-l border-[#f6f8fa]">Sign In</a>
+      <a href="#" class="py-[10px] px-[16px] border-l border-[#f6f8fa]">Register</a>
     </div>
   </div>
-  <hr class="border-[#e1e5eb]">
-  <nav class="py-[10px]">
-    <div class="container mx-auto flex flex-wrap justify-start gap-2 items-center lg:justify-between p-2 max-w-6xl">
+</header>
+
+<!-- Navegacion -->
+<section>
+  <nav class="fixed left-0 w-full bg-white z-50 shadow-sm py-[7px]"
+    [style.top]="getNavPosition()"
+    (window:scroll)="onWindowScroll($event)">
+    <div class="mx-auto flex flex-wrap justify-start gap-2 items-center lg:justify-between max-w-6xl">
       <div class="w-full flex justify-between items-center lg:w-auto">
-        <button type="button" class="burguer relative border-primary-500 border-[1px] p-1 rounded-md lg:hidden" (click)="toggleMenu()">
+        <button type="button" class="burguer relative border-primary-500 border-[1px] mx-2 rounded-md lg:hidden" (click)="toggleMenu()">
           <img [src]="isMenuOpen ? '/assets/images/close.svg' : '/assets/images/menu.svg'" alt="Menu" width="24px" height="24px">
         </button>
-        <a class="text-[#1b1e20] font-bold text-[20px] inline-block mx-auto lg:mx-0" href="/">List<span class="text-primary-500">Race</span></a>
+        <a class="text-[#1b1e20] font-bold text-[20px] inline-block mx-auto lg:mx-5" href="/">List<span class="text-primary-500">Race</span>
+        </a>
       </div>
-      <!-- menu de opciones -->
       <div [ngClass]="{'w-full': isMenuOpen, 'hidden': !isMenuOpen, 'lg:flex': true}">
-        <ul class="flex flex-col gap-6 py-4 md:gap-10 md:flex-row">
-          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-          href="">Home</a></li>
-          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-          href="">How it works</a></li>
-          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-          href="">Explore</a></li>
-          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-          href="">Review</a></li>
-          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-          href="">Blog</a></li>
-          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-          href="">Contact</a></li>
+        <ul class="flex flex-col mx-10 gap-6 py-4 md:gap-10 md:flex-row">
+          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500" href="">Home</a></li>
+          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500" href="">How it works</a></li>
+          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500" href="">Explore</a></li>
+          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500" href="">Review</a></li>
+          <li><a class="text-[#859098] uppercase font-medium hover:text-property-500" href="">Blog</a></li>
+          <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500" href="">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -54,196 +61,169 @@
 </section>
 
 <!-- Section hero -->
-<section class="hero h-[800px] bg-[url('/assets/images/hero/banner.jpg')] relative text-center contrast-100 pt-[80px] md:pt-[155px]">
-  <div class="absolute inset-0 bg-black opacity-50"></div>
-  <div class="container mx-auto px-6 max-w-6xl relative">
-    <h2 class="text-[24px] text-white uppercase font-bold tracking-[2.4px] text-pretty md:text-[40px] md:px-12 lg:text-[48px]">
-      best place to find and explore that all you need
+<section class="mx-auto max-w-[1920px] pt-40 xs:pt-48 sm:pt-64 md:pt-64 relative bg-[url('/assets/images/hero/banner.jpg')] bg-center bg-cover text-center h-[930px]">
+  <div class="absolute inset-0 bg-[rgba(65,73,89,0.65)] z-0"></div>
+  <div class="relative mx-auto px-6 max-w-6xl">
+    <h2 class="text-[24px] text-white uppercase font-bold tracking-[2.5px] pt-[24px] text-pretty
+      md:text-[42px] md:px-12 lg:text-[48px] ">
+      best place to find and explore that all you need 
     </h2>
-    <p class="text-white text-[20px] mt-[25px] px-10">
+    <p class="text-white text-[16px] mt-[15px] px-4 xs:px-6 sm:px-10 md:text-[18px] ">
       Find Best Place, Restaurant, Hotel, Real State and many more think in just One click
     </p>
 
-    <!-- Search Form: -->
-    <div class="welcome-hero-serch-box opacity-100 mt-[50px]">
-      <!-- El gap-6 para el mobile, baja el boton -->
-      <div class="welcome-hero-form flex flex-col lg:flex-row md:gap-6 gap-6">
-        <!-- El gap-6 para el space entre inputs -->
-        <div class="flex flex-col md:flex-row md:ml-[-4.5px] lg:ml-[1px] gap-6 md:gap-0 lg:py-4">
-          <!-- What Input -->
-          <div class="single-welcome-hero-form flex flex-col md:flex-row ml-[-14px] md:mt-0 bg-white py-3 lg:rounded">
-            <div class="flex flex-row justify-between">
-              <h3 class="text-[18px] py-2 lg:py-3 font-bold md:mx-6 ml-[45%] md:pt-4">What?</h3>
-              <div class="welcome-hero-form-icon py-2 lg:py-3 mx-5 text-[18px] md:pt-4">
-                <i class="fi fi-rr-search"></i>
-              </div>
-            </div>
-            <form action="#" class="flex-1">
-              <input type="text" placeholder="Ex: place, restaurant, food, automobile"
-                class="w-full md:w-[200px] lg:w-[250px] sm:w-full py-4 lg:py-3 text-center focus:outline-none"
-                (focus)="open($event)" (blur)="close($event)">
-              </form>
-            </div>
-
-            <!-- Location Input -->
-            <div class="single-welcome-hero-form flex flex-col md:flex-row ml-[-14px] md:mt-0 bg-white py-3 lg:rounded">
-              <div class="flex flex-row justify-between">
-                <h3 class="text-[18px] py-2 lg:py-3 font-bold md:mx-6 ml-[40%]">Location</h3>
-                <div class="welcome-hero-form-icon py-2 lg:py-3 mx-5 text-[18px] md:pt-4">
-                  <i class="fi fi-rr-search"></i>
-                </div>
-              </div>
-              <form action="#" class="flex-1">
-                <input type="text" placeholder="Ex: London, New York, Rome"
-                  class="w-full md:w-[232px] lg:w-[250px] py-4 lg:py-3 text-center focus:outline-none"
-                  (focus)="open($event)" (blur)="close($event)">
-                </form>
-              </div>
-            </div>
-
-            <!-- Search Button -->
-            <div class="welcome-hero-serch md:mt-0 flex lg:flex-row md:justify-center justify-center lg:py-[16px]">
-          <button class="welcome-hero-btn bg-red-500 text-white py-6 px-16 xl:px-16 lg:px-6 md:px-16 
-                        hover:bg-red-600 focus:outline-none flex items-center rounded">Search 
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 feather feather-search">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-              </button>
-            </div>
-          </div>
+    <!-- Search Form -->
+    <div class="mt-10 xs:mt-12 sm:mt-20 flex flex-col items-center md:flex-col lg:flex-row md:items-stretch lg:items-center 
+      justify-center gap-4 xs:gap-5 sm:gap-5 md:gap-4 lg:gap-4 w-full mx-auto px-4 sm:px-0 lg:max-w-6xl"> 
+      
+      <!-- Contenedor blanco con inputs -->
+      <div class="flex flex-col sm:max-w-md w-full gap-y-6 md:flex-row md:max-w-none md:w-auto md:flex-grow md:gap-x-0 md:gap-y-0"> 
+        <!-- What Input -->
+        <div class="flex items-center w-full px-6 py-4 sm:py-5 bg-white rounded-md shadow-md overflow-hidden 
+          lg:rounded-r-none md:rounded-r-none lg:w-auto lg:flex-grow"> 
+          <span class="font-semibold text-gray-800 mr-2 whitespace-nowrap">What?</span>
+          <input type="text" placeholder="Ex: Palce, Restarent, Food"
+            class="flex-1 text-gray-700 placeholder:text-gray-400 focus:outline-none bg-transparent"
+          />
+          <i class="fi fi-rr-list ml-3 text-gray-500 text-lg"></i>
         </div>
-        <!-- End of Search Form -->
-      </div>
-    </section>
-
-    <!-- Section card listings -->
-    <app-category-card></app-category-card>
-
-    <!-- section How it works pb-abajo pt-arriba-->
-    <section class="my-8 text-center text-[24px] container mx-auto max-w-6xl pb-[50px] pt-[50px] md:pt-[200px] lg:pt-[50px]">
-      <h2 class="uppercase mb-6 tracking-wide text-[24px]">How it works</h2>
-      <p class="text-[18px]">Learn More about how our website works</p>
-    </section>
-    
-    <app-feature-card></app-feature-card>
-
-    <!-- section explore -->
-    <section class="bg-[#f8fafb] pt-[117px] pb-[95px]">
-      <div class="container mx-auto px-6 text-center max-w-6xl">
-        <h2 class="uppercase mb-6 tracking-wide text-[24px]">Explore</h2>
-        <p class="text-[18px]">Explore New place, food, culture around the world and many more</p>
-      </div>
-    </section>
-    <app-activity-card></app-activity-card>
-
-    <!-- section reviews -->
-    <section class="pt-[80px]">
-      <div class="container mx-auto px-6 text-center max-w-6xl">
-        <h2 class="uppercase mb-6 tracking-wide text-[24px]">Cients reviews</h2>
-        <p class="text-[18px]">What our client say about us</p>
-      </div>
-    </section>
-    <app-reviews></app-reviews>
-
-    <!-- Section statistics -->
-    <app-statistics></app-statistics>
-
-    <!-- Section posts -->
-    <section class="container max-w-6xl mx-auto px-6 text-center py-20">
-      <h2 class="uppercase mb-6 tracking-wide text-[24px]">News and articles</h2>
-      <p class="text-[18px]">Always upto date with our latest News and Articles</p>
-    </section>
-    <app-posts></app-posts>
-
-    <!-- section email -->
-    <section class="email bg-[#f8fafb] py-[150px]">
-      <div class="email">
-        <div class="container mx-auto max-w-6xl text-center px-6">
-          <h2 class="uppercase mb-[28px] text-[24px]">do you want to add your business listing with us?</h2>
-          <p class="paragraph">
-            Listrace offer you to list your business with us and we very much able to promote your Business.
-          </p>
-
-          <div>
-            <form class="flex flex-col items-center md:flex-row md:flex-wrap md:justify-center"
-              (submit)="handleSubmit($event)">
-              <input
-                [(ngModel)]="email"
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your email here"
-                class="text-[16px] border-[1px] border-white shadow-category-card pl-[30px] py-4 mb-6 mt-8 w-full md:w-3/5"
-                required>
-
-                <button class="w-fit bg-primary-500 text-white py-4 px-6 md:h-[60px] md:mt-[7px]" type="submit">
-                  Create Account
-                </button>
-              </form>
-              @if (message) {
-                <div [ngClass]="{
-                  'bg-green': isValid, 'bg-red-500': !isValid}">
-                  {{ message }}
-                </div>
-              }
-
-            </div>
-          </div>
+        <!-- Location Input -->
+        <div class="flex items-center w-full px-6 py-4 sm:py-5 bg-white rounded-md shadow-md overflow-hidden 
+          lg:w-auto lg:flex-grow md:rounded-l-none"> 
+          <span class="font-semibold text-gray-800 mr-2 whitespace-nowrap">Location</span>
+          <input type="text" placeholder="Ex: London, Newyork, Rom"
+            class="flex-1 text-gray-700 placeholder:text-gray-400 focus:outline-none bg-transparent"
+          />
+          <i class="fi fi-rr-target ml-2 text-gray-500 text-lg"></i>
         </div>
-      </section>
+      </div>
 
-      <!-- section footer -->
-      <section>
-        <footer class="container mx-auto max-w-6xl px-6 py-[45px]">
-          <div class="flex flex-wrap items-center md:justify-between">
-            <div class="logo">
-              <a class="text-[#1b1e20] font-bold text-[20px]" href="/">List
-                <span class="text-primary-500">Race</span>
-              </a>
+      <button class="bg-[#ff545a] hover:bg-[#f43032] text-white px-12 py-4 flex items-center justify-center 
+        rounded w-36 mt-6 sm:py-6 sm:mt-6 md:w-36 md:mt-6 md:self-center lg:py-[22px] lg:mt-0">
+        <span class="font-semibold">Search</span> 
+        <i class="fi fi-rr-search ml-2 text-md"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Section card listings -->
+<app-category-card></app-category-card>
+
+<!-- section How it works pb-abajo pt-arriba-->
+<section class="my-8 text-center text-[24px] container mx-auto max-w-6xl pb-[50px] pt-[50px] md:pt-[200px] lg:pt-[50px]">
+  <h2 class="uppercase mb-6 tracking-wide text-[24px]">How it works</h2>
+  <p class="text-[18px]">Learn More about how our website works</p>
+</section>
+
+<app-feature-card></app-feature-card>
+
+<!-- section explore -->
+<app-explore-card></app-explore-card>
+
+<!-- section reviews -->
+<section class="pt-[80px]">
+  <div class="container mx-auto px-6 text-center max-w-6xl">
+    <h2 class="uppercase mb-6 tracking-wide text-[24px]">Cients reviews</h2>
+    <p class="text-[18px]">What our client say about us</p>
+  </div>
+</section>
+<app-reviews></app-reviews>
+
+<!-- Section statistics -->
+<app-statistics></app-statistics>
+
+<!-- Section posts -->
+<app-posts></app-posts>
+
+<!-- section email -->
+<section class="email bg-[#f8fafb] py-[150px]">
+  <div class="email">
+    <div class="container mx-auto max-w-6xl text-center px-6">
+      <h2 class="uppercase mb-[28px] text-[24px]">do you want to add your business listing with us?</h2>
+      <p class="paragraph">
+        Listrace offer you to list your business with us and we very much able to promote your Business.
+      </p>
+
+      <div>
+        <form class="flex flex-col items-center md:flex-row md:flex-wrap md:justify-center"
+          (submit)="handleSubmit($event)">
+          <input
+            [(ngModel)]="email"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email here"
+            class="text-[16px] border-[1px] border-white shadow-category-card pl-[30px] py-4 mb-6 mt-8 w-full md:w-3/5"
+            required>
+
+            <button class="w-fit bg-primary-500 text-white py-4 px-6 md:h-[60px] md:mt-[7px]" type="submit">
+              Create Account
+            </button>
+          </form>
+          @if (message) {
+            <div [ngClass]="{
+              'bg-green': isValid, 'bg-red-500': !isValid}">
+              {{ message }}
             </div>
-            <ul class="flex flex-wrap w-full gap-6 pb-4 md:w-fit md:gap-6 md:flex-row">
-              <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-              href="">How it works</a></li>
-              <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-              href="">Explore</a></li>
-              <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-              href="">Review</a></li>
-              <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-              href="">Blog</a></li>
-              <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-              href="">Contact</a></li>
-              <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
-              href="">my acount</a></li>
-            </ul>
-          </div>
-          <hr class="border-[#e1e5eb] mt-[20px] mb-[15px]">
+          }
 
-          <div class="extra-information flex justify-between items-center">
-            <div class="copyright">
-              <p class="mb-6 tracking-wide text-[16px] text-[#a5adb3]">
-                ©Copyright.   Designed and developed by
-                <a href="https://github.com/jhonlima97">Jhon Lima</a>
-              </p>
-            </div>
-            <ul class="flex flex-wrap w-full gap-6 pb-4 md:w-fit md:gap-6 md:flex-row text-[#a5adb3]">
-              <a href="#"><i class="fi fi-brands-whatsapp"> +51 976411888</i></a>
-              <a href="#"><i class="fi fi-brands-facebook"></i></a>
-              <a href="#"><i class="fi fi-brands-twitter"></i></a>
-              <a href="#"><i class="fi fi-brands-google"></i></a>
-              <a href="#"><i class="fi fi-brands-linkedin"></i></a>
-            </ul>
-          </div>
-        </footer>
-      </section>
+        </div>
+      </div>
+    </div>
+</section>
 
-      <!-- Button de scrollTop -->
-      @if (showScrollButton) {
-        <div id="scroll-Top" class="fixed bottom-4 right-4">
-          <button (click)="scrollToTop()"
-            class="return-to-top bg-[#ff545a] text-white border border-[#ff545a] rounded-full cursor-pointer 
-            w-[40px] h-[40px] flex items-center justify-center text-[20px]">
-            <span class=" font-medium animate-bounce">^</span></button >
-          </div>
-      }
+<!-- section footer -->
+<section>
+  <footer class="container mx-auto max-w-6xl px-6 py-[45px]">
+    <div class="flex flex-wrap items-center md:justify-between">
+      <div class="logo">
+        <a class="text-[#1b1e20] font-bold text-[20px]" href="/">List
+          <span class="text-primary-500">Race</span>
+        </a>
+      </div>
+      <ul class="flex flex-wrap w-full gap-6 pb-4 md:w-fit md:gap-6 md:flex-row">
+        <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+        href="">How it works</a></li>
+        <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+        href="">Explore</a></li>
+        <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+        href="">Review</a></li>
+        <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+        href="">Blog</a></li>
+        <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+        href="">Contact</a></li>
+        <li><a class="text-[#859098] uppercase font-medium hover:text-primary-500"
+        href="">my acount</a></li>
+      </ul>
+    </div>
+    <hr class="border-[#e1e5eb] mt-[20px] mb-[15px]">
+
+    <div class="extra-information flex justify-between items-center">
+      <div class="copyright">
+        <p class="mb-6 tracking-wide text-[16px] text-[#a5adb3]">
+          ©Copyright.   Designed and developed by
+          <a href="https://github.com/jhonlima97">Jhon Lima</a>
+        </p>
+      </div>
+      <ul class="flex flex-wrap w-full gap-6 pb-4 md:w-fit md:gap-6 md:flex-row text-[#a5adb3]">
+        <a href="#"><i class="fi fi-brands-whatsapp"> +51 976411888</i></a>
+        <a href="#"><i class="fi fi-brands-facebook"></i></a>
+        <a href="#"><i class="fi fi-brands-twitter"></i></a>
+        <a href="#"><i class="fi fi-brands-google"></i></a>
+        <a href="#"><i class="fi fi-brands-linkedin"></i></a>
+      </ul>
+    </div>
+  </footer>
+</section>
+
+<!-- Button de scrollTop -->
+@if (showScrollButton) {
+  <div id="scroll-Top" class="fixed bottom-4 right-4">
+    <button (click)="scrollToTop()"
+      class="return-to-top bg-[#ff545a] text-white border border-[#ff545a] rounded-full cursor-pointer 
+      w-[40px] h-[40px] flex items-center justify-center text-[20px]">
+      <span class=" font-medium animate-bounce">^</span>
+    </button >
+  </div>
+}

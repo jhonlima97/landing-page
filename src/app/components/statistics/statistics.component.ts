@@ -2,10 +2,12 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { PlatformService } from '../../api/platform.service';
 import { CountUp } from 'countup.js';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-statistics',
-    imports: [],
+    standalone: true,
+    imports: [CommonModule],
     templateUrl: './statistics.component.html'
 })
 export class StatisticsComponent implements AfterViewInit{

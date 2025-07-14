@@ -1,11 +1,11 @@
-import { Component, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, HostListener, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { EmailService } from './api/email.service';
 import { FormsModule } from '@angular/forms';
 
 import { CategoryCardComponent } from './components/category-card/category-card.component';
 import { FeatureCardComponent } from './components/feature-card/feature-card.component';
-import { ActivityCardComponent } from './components/activity-card/activity-card.component';
+import { ExploreCardComponent } from './components/explore-card/explore-card.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { PostsComponent } from "./components/posts/posts.component";
 import { StatisticsComponent } from "./components/statistics/statistics.component";
@@ -15,7 +15,7 @@ import { StatisticsComponent } from "./components/statistics/statistics.componen
     imports: [FormsModule, CommonModule,
       CategoryCardComponent,
       FeatureCardComponent,
-      ActivityCardComponent,
+      ExploreCardComponent,
       ReviewsComponent,
       PostsComponent,
       StatisticsComponent],
@@ -24,9 +24,37 @@ import { StatisticsComponent } from "./components/statistics/statistics.componen
 
 export class AppComponent{
 
-  constructor(private emailService: EmailService){}
+  constructor(private emailService: EmailService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
-  // For the navbar
+  // Propiedad para almacenar la posición actual del scroll
+  currentScroll: number = 0; 
+  // Propiedad para controlar la visibilidad del botón de "scroll to top"
+  showScrollButton = false;
+
+  // Escucha el evento de scroll de la ventana y actualiza ambas lógicas
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(event: Event): void {
+    // Lógica para la barra de navegación
+    this.currentScroll = window.pageYOffset;
+
+    // Lógica para el botón de "scroll to top"
+    const yOffset = window.scrollY;
+    const scrollThreshold = 1000; // Ajusta este valor si es necesario
+    this.showScrollButton = yOffset > scrollThreshold;
+  }
+
+  // Define la posición 'top' de la barra de navegación
+  getNavPosition(): string {
+    if (!isPlatformBrowser(this.platformId)) {
+      return '60px';
+    }
+    return this.currentScroll > 0 ? '0px'
+      : (window.innerWidth < 768 ? '110px' : '60px');
+  }
+
+  // Para la barra de navegación del menú móvil
   isMenuOpen = false;
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -70,18 +98,7 @@ export class AppComponent{
     }
   }
 
-  // Funtion for scroll
-  showScrollButton = false;
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const yOffset = window.scrollY;
-    // Ajusta el valor según el momento en que quieres que aparezca el botón
-    const scrollThreshold = 1000;
-
-    this.showScrollButton = yOffset > scrollThreshold;
-  }
-  
+  // For the button scroll to top  
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }

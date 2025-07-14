@@ -1,5 +1,6 @@
 
 import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { PostsService } from '../../api/posts.service';
 
 interface PostCard {
@@ -15,7 +16,7 @@ interface PostCard {
 
 @Component({
     selector: 'app-posts',
-    imports: [],
+    imports: [CommonModule],
     templateUrl: './posts.component.html',
     providers: [PostsService]
 })
