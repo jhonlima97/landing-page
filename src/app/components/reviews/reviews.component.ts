@@ -80,6 +80,10 @@ export class ReviewsComponent implements OnInit, AfterViewInit, OnDestroy {
           const slides = swiperEl.querySelectorAll('swiper-slide');
           slides.forEach((slide: Element, i: number) => {
             const isCentered = i === activeIndex + 1;
+            // const slidesPerView = swiperEl.swiper.params.slidesPerView;
+            // const offset = Math.floor(slidesPerView / 2); // ← 2 cuando son 5 slides
+            // const isCentered = i === activeIndex + offset;
+
             slide.classList.toggle('center-slide', isCentered);
           });
         });

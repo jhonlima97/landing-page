@@ -1,26 +1,31 @@
 <main>
-  <section class="reviews-section pt-16 pb-24 px-4 md:px-10 lg:px-20 3xl:px-32">
+  <section class="mx-auto max-w-[1920px] pt-16 pb-24 px-4 md:px-10 lg:px-20 3xl:px-32">
+
+    <div class="py-6 text-center">
+      <h2 class="uppercase mb-6 tracking-wide text-[24px]">Cients reviews</h2>
+      <p class="text-[18px]">What our client say about us</p>
+    </div>
+
     <swiper-container
       init="false"
       class="w-full flex overflow-hidden"
       slides-per-view="1"
-      space-between="15"
       loop="true"
       autoplay="true"
       autoplay-delay="3000"
       speed="300"
       centered-slides="true"
       breakpoints='{
-        "320": { "slidesPerView": 1, "spaceBetween": 15 },
-        "480": { "slidesPerView": 1, "spaceBetween": 20 },
-        "768": { "slidesPerView": 2, "spaceBetween": 30 },
-        "1024": { "slidesPerView": 3, "spaceBetween": 30 }
-      }'
-    >
+        "320": { "slidesPerView": 1, "spaceBetween": 10 },
+        "480": { "slidesPerView": 1, "spaceBetween": 10 },
+        "768": { "slidesPerView": 3, "spaceBetween": 15 },
+        "1024": { "slidesPerView": 3, "spaceBetween": 15 }
+      }' >
 
       @for (review of reviews; track review.id) {
         <swiper-slide class="flex-shrink-0 transition-transform">
-          <div class="card-fade w-full h-[280px] p-6 bg-white rounded-md shadow-feature-card text-paragraph text-left transition duration-300 hover:shadow-lg hover:scale-[1.02]">
+          <div class="card-fade w-full h-[280px] p-6 bg-white rounded-md shadow-feature-card 
+            text-paragraph text-left transition duration-300 hover:shadow-lg hover:scale-[1.02]">
             <div class="flex items-center gap-4 pb-4 capitalize">
               <img [src]="review.image" [alt]="review.client" class="w-12 h-12 rounded-full object-cover border border-light-gray" />
               <div>
@@ -40,5 +45,6 @@
         </swiper-slide>
       }
     </swiper-container>
+    
   </section>
 </main>
