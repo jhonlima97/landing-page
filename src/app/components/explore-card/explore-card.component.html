@@ -5,7 +5,8 @@
       <p class="text-[18px]">Explore New place, food, culture around the world and many more</p>
     </div>
     <div class="mx-auto w-full max-w-screen-xl px-5 sm:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div *ngFor="let card of activityCards" class="border border-[#c1cdd6] rounded overflow-hidden hover:shadow-section-explore duration-300">
+      @for(let card of activityCards) {
+      <div class="border border-[#c1cdd6] rounded overflow-hidden hover:shadow-section-explore duration-300">
         <div class="image relative h-[250.3px] contrast-[.6] overflow-hidden">
           <img [src]="card.image" alt="{{card.name}}" class="w-full h-full object-cover">
         </div>
@@ -57,6 +58,7 @@
           </div>
         </div>
       </div>
+      }
     </div>        
   </section>
 </main>

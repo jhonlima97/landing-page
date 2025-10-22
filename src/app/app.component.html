@@ -154,11 +154,11 @@
             Create Account
           </button>
         </form>
-        <div *ngIf="message" [ngClass]="{
-          'bg-green': isValid, 'bg-red-500': !isValid}">
-          {{ message }}
-        </div>
-        
+        @if (message) {
+          <div [ngClass]="{ 'bg-green': isValid, 'bg-red-500': !isValid }">
+            {{ message }}
+          </div>
+        }
       </div>
     </div>
   </div>
